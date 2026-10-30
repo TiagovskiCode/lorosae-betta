@@ -1,0 +1,416 @@
+{
+  "_note": "DADOS DE DEMONSTRAÇÃO. Nomes, preços, descrições e disponibilidade são exemplos e têm de ser substituídos pelo stock real. Os campos listados em 'confirmed' foram validados pelo vendedor; todos os restantes são ilustrativos. Campos a null significam 'por confirmar'. published=false esconde o produto da loja (rascunho) até ter imagens/dados reais.",
+  "meta": {
+    "demo": true,
+    "currency": "EUR",
+    "locale": "pt-PT"
+  },
+  "products": [
+    {
+      "id": "lb-001",
+      "slug": "abissal",
+      "name": "Abissal",
+      "category": "halfmoon",
+      "tail": "Halfmoon",
+      "colors": [
+        "Azul real",
+        "Preto"
+      ],
+      "colorDescription": "Azul real profundo com reflexos metálicos nas barbatanas e uma sombra escura junto à base da cauda.",
+      "price": 38,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Um azul fundo e intenso, pensado para destacar-se contra a escuridão.",
+      "description": "Abissal é um Betta Halfmoon cuja cor lembra a água a escurecer à medida que a profundidade aumenta. Quando abre a cauda, o azul ganha brilho junto às extremidades e desvanece em tons mais escuros junto ao corpo. Um peixe de presença serena, que pede um aquário com fundo escuro e luz suave.",
+      "images": {
+        "primary": "assets/images/products/lb-abissal-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-abissal-02.jpg"
+        ],
+        "alt": "Betta Halfmoon azul real e preto com a cauda aberta, sobre fundo escuro"
+      },
+      "tint": [
+        "#2a62c9",
+        "#0b1a3a"
+      ],
+      "featured": true,
+      "layout": "feature",
+      "confirmed": []
+    },
+    {
+      "id": "lb-002",
+      "slug": "ambar",
+      "name": "Âmbar",
+      "category": "crowntail",
+      "tail": "Crowntail",
+      "colors": [
+        "Cobre",
+        "Vermelho"
+      ],
+      "colorDescription": "Corpo cobre quente com raios vermelhos que se afinam em pontas claras, como luz através de âmbar.",
+      "price": 32,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Cobre e vermelho num contorno recortado, de calor quase metálico.",
+      "description": "Âmbar é um Crowntail onde o recorte dos raios é a característica principal. O corpo tem um tom cobre aquecido e as barbatanas acompanham-no com vermelho que clareia nas pontas. Fica especialmente bem em aquários com plantas verdes escuras, que fazem a cor sobressair.",
+      "images": {
+        "primary": "assets/images/products/lb-ambar-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-ambar-02.jpg"
+        ],
+        "alt": "Betta Crowntail cobre e vermelho com raios recortados, sobre fundo escuro"
+      },
+      "tint": [
+        "#c0562f",
+        "#2a0f0c"
+      ],
+      "featured": false,
+      "spotlight": true,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-003",
+      "slug": "mare",
+      "name": "Maré",
+      "category": "halfmoon",
+      "tail": "Halfmoon",
+      "colors": [
+        "Azul-turquesa"
+      ],
+      "colorDescription": "Azul-turquesa uniforme, com escamas que refletem tons verdes conforme a incidência da luz.",
+      "price": 24,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Turquesa com brilho que muda entre o azul e o verde.",
+      "description": "Maré destaca-se pela cor contínua e pelo brilho das escamas, que passa do azul ao verde consoante o ângulo da luz. A cauda larga, em meia-lua, abre-se num leque que acompanha cada movimento.",
+      "images": {
+        "primary": "assets/images/products/lb-mare-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-mare-02.jpg"
+        ],
+        "alt": "Betta Halfmoon azul-turquesa com a cauda aberta, sobre fundo escuro"
+      },
+      "tint": [
+        "#27a69a",
+        "#06201f"
+      ],
+      "featured": true,
+      "layout": "tall",
+      "confirmed": []
+    },
+    {
+      "id": "lb-004",
+      "slug": "nevoa",
+      "name": "Névoa",
+      "category": "dumbo-ear",
+      "tail": "Dumbo Ear",
+      "colors": [
+        "Branco pérola",
+        "Azul-acinzentado"
+      ],
+      "colorDescription": "Corpo branco pérola com barbatanas translúcidas que passam a azul-acinzentado nas margens.",
+      "price": 36,
+      "status": "reserved",
+      "stock": 0,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Pérola e azul-névoa, com barbatanas peitorais amplas e translúcidas.",
+      "description": "Névoa é um Dumbo Ear de paleta suave. As barbatanas peitorais, grandes e translúcidas, movem-se constantemente e dão ao peixe um ar quase aéreo. Neste exemplo de demonstração encontra-se reservado, para ilustrar como o estado aparece na loja.",
+      "images": {
+        "primary": "assets/images/products/lb-nevoa-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-nevoa-02.jpg"
+        ],
+        "alt": "Betta Dumbo Ear branco pérola com barbatanas peitorais translúcidas, sobre fundo escuro"
+      },
+      "tint": [
+        "#9fb4d6",
+        "#12192b"
+      ],
+      "featured": true,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-005",
+      "slug": "cobre",
+      "name": "Cobre",
+      "category": "veiltail",
+      "tail": "Veiltail",
+      "colors": [
+        "Laranja cobre"
+      ],
+      "colorDescription": "Laranja cobre quente e uniforme, com cauda longa que cai em dobras suaves.",
+      "price": 22,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Um Veiltail em laranja cobre, de cauda longa e movimento lento.",
+      "description": "Cobre é uma lição de simplicidade: uma única cor quente, aplicada de forma uniforme, numa cauda que cai como um véu. O movimento é lento e fluido, e o peixe ganha muito num aquário com luz suave e vegetação.",
+      "images": {
+        "primary": "assets/images/products/lb-cobre-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-cobre-02.jpg"
+        ],
+        "alt": "Betta Veiltail laranja cobre com cauda longa e caída, sobre fundo escuro"
+      },
+      "tint": [
+        "#d98b4f",
+        "#2b1608"
+      ],
+      "featured": true,
+      "layout": "wide",
+      "confirmed": []
+    },
+    {
+      "id": "lb-006",
+      "slug": "gemeo",
+      "name": "Gémeo",
+      "category": "halfmoon",
+      "tail": "Halfmoon",
+      "colors": [
+        "Azul",
+        "Cobre"
+      ],
+      "colorDescription": "Corpo azul profundo com barbatanas riscadas de azul e cobre, de margens translúcidas e recortadas.",
+      "price": 42,
+      "status": "available",
+      "stock": 2,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Azul profundo com riscas cobre e margens translúcidas.",
+      "description": "Gémeo destaca-se pelo contraste entre o azul do corpo e o cobre que percorre as barbatanas, de margens translúcidas e recortadas. Existem dois exemplares semelhantes em demonstração; o peixe enviado pode diferir ligeiramente da fotografia.",
+      "images": {
+        "primary": "assets/images/products/lb-gemeo-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-gemeo-02.jpg"
+        ],
+        "alt": "Betta azul e cobre com barbatanas translúcidas, a nadar em água escura com raios de luz"
+      },
+      "tint": [
+        "#c1273b",
+        "#240810"
+      ],
+      "featured": true,
+      "layout": "wide",
+      "confirmed": []
+    },
+    {
+      "id": "lb-007",
+      "slug": "eclipse",
+      "name": "Eclipse",
+      "category": "halfmoon",
+      "tail": "Halfmoon",
+      "colors": [
+        "Preto",
+        "Dourado"
+      ],
+      "colorDescription": "Corpo preto profundo com um halo dourado fino a contornar as barbatanas.",
+      "price": 45,
+      "status": "soon",
+      "stock": 0,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Preto profundo contornado a dourado, como uma coroa solar.",
+      "description": "Eclipse é um Halfmoon de paleta contida: o corpo é escuro e apenas a margem das barbatanas recebe um fio dourado. O efeito é o de um eclipse, onde a luz só aparece no contorno. Em demonstração, aparece como 'Em breve'.",
+      "images": {
+        "primary": "assets/images/products/lb-eclipse-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-eclipse-02.jpg"
+        ],
+        "alt": "Betta Halfmoon preto com margens douradas nas barbatanas, sobre fundo escuro"
+      },
+      "tint": [
+        "#c9a24a",
+        "#14110a"
+      ],
+      "featured": false,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-008",
+      "slug": "coral",
+      "name": "Coral",
+      "category": "crowntail",
+      "tail": "Crowntail",
+      "colors": [
+        "Vermelho coral",
+        "Azul"
+      ],
+      "colorDescription": "Vermelho coral nas barbatanas com riscas de azul-aço junto ao corpo.",
+      "price": 34,
+      "status": "available",
+      "stock": 2,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Coral e azul-aço num Crowntail de raios bem definidos.",
+      "description": "Coral combina um vermelho quente, de tom coral, com riscas de azul-aço junto ao corpo. Os raios recortados dão textura à cauda. Existem dois exemplares semelhantes em demonstração; o peixe enviado pode diferir ligeiramente da fotografia.",
+      "images": {
+        "primary": "assets/images/products/lb-coral-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-coral-02.jpg"
+        ],
+        "alt": "Betta Crowntail vermelho coral com riscas azuis, sobre fundo escuro"
+      },
+      "tint": [
+        "#e2574c",
+        "#1c1030"
+      ],
+      "featured": true,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-009",
+      "slug": "jade",
+      "name": "Jade",
+      "category": "halfmoon",
+      "tail": "Halfmoon",
+      "colors": [
+        "Verde esmeralda"
+      ],
+      "colorDescription": "Verde esmeralda metálico, com brilho mais claro ao longo do dorso.",
+      "price": 28,
+      "status": "sold",
+      "stock": 0,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Verde esmeralda metálico, de brilho profundo.",
+      "description": "Jade é um Betta verde esmeralda cujo brilho se concentra no dorso e se prolonga pelas barbatanas largas. Está marcado como vendido para demonstrar o estado esgotado, mantendo-se visível como referência do tipo de peixe que a loja apresenta.",
+      "images": {
+        "primary": "assets/images/products/lb-jade-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-jade-02.jpg"
+        ],
+        "alt": "Betta Halfmoon verde esmeralda metálico, sobre fundo escuro"
+      },
+      "tint": [
+        "#2f9d6b",
+        "#06211a"
+      ],
+      "featured": false,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-010",
+      "slug": "aurora",
+      "name": "Aurora",
+      "category": "dumbo-ear",
+      "tail": "Dumbo Ear",
+      "colors": [
+        "Rosa pálido",
+        "Violeta"
+      ],
+      "colorDescription": "Rosa pálido no corpo com degradé para violeta nas barbatanas.",
+      "price": 40,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Rosa pálido a violeta, como o céu antes do amanhecer.",
+      "description": "Aurora é um Dumbo Ear de tons suaves, com um degradé do rosa pálido ao violeta nas barbatanas. As peitorais amplas acentuam o movimento e a delicadeza da cor. Um peixe para quem prefere subtileza a contraste.",
+      "images": {
+        "primary": "assets/images/products/lb-aurora-01.jpg",
+        "gallery": [],
+        "alt": "Betta Dumbo Ear rosa pálido com barbatanas violeta, sobre fundo escuro"
+      },
+      "tint": [
+        "#b78ad0",
+        "#1b1030"
+      ],
+      "featured": false,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-011",
+      "slug": "lotus",
+      "published": false,
+      "name": "Lótus",
+      "category": "veiltail",
+      "tail": "Veiltail",
+      "colors": [
+        "Branco",
+        "Azul claro"
+      ],
+      "colorDescription": "Branco suave com pontas em azul claro e cauda de queda longa.",
+      "price": 20,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Branco e azul claro num Veiltail de movimento delicado.",
+      "description": "Lótus tem um corpo claro e uma cauda que se vai tingindo de azul nas pontas. O movimento é calmo e a cor ganha muito sobre fundos escuros, onde o branco se destaca com nitidez.",
+      "images": {
+        "primary": "assets/images/products/lb-lotus-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-lotus-02.jpg"
+        ],
+        "alt": "Betta Veiltail branco com pontas azul claro, sobre fundo escuro"
+      },
+      "tint": [
+        "#8fc3e0",
+        "#0d1c2a"
+      ],
+      "featured": false,
+      "layout": "std",
+      "confirmed": []
+    },
+    {
+      "id": "lb-012",
+      "slug": "sombra",
+      "published": false,
+      "name": "Sombra",
+      "category": "double-tail",
+      "tail": "Double Tail",
+      "colors": [
+        "Preto",
+        "Azul-meia-noite"
+      ],
+      "colorDescription": "Preto profundo com reflexos azul-meia-noite visíveis sob luz direta.",
+      "price": 48,
+      "status": "available",
+      "stock": 1,
+      "sex": null,
+      "ageMonths": null,
+      "sizeCm": null,
+      "shortDescription": "Preto com reflexos azul-meia-noite, em cauda dupla.",
+      "description": "Sombra é um Double Tail quase monocromático, em que o azul-meia-noite só se revela quando a luz incide de lado. A cauda dividida confere-lhe uma silhueta marcante, ideal para quem aprecia elegância discreta.",
+      "images": {
+        "primary": "assets/images/products/lb-sombra-01.jpg",
+        "gallery": [
+          "assets/images/products/lb-sombra-02.jpg"
+        ],
+        "alt": "Betta Double Tail preto com reflexos azul-meia-noite, sobre fundo escuro"
+      },
+      "tint": [
+        "#3b4fa0",
+        "#070b1c"
+      ],
+      "featured": false,
+      "layout": "std",
+      "confirmed": []
+    }
+  ]
+}

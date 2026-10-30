@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Substituir www.example.com pelo domínio final antes de publicar. -->
+<!-- As páginas de produto (pages/product.html?produto=...) devem ser adicionadas quando o stock real existir. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.com/</loc></url>
+  <url><loc>https://www.example.com/pages/shop.html</loc></url>
+  <url><loc>https://www.example.com/pages/about.html</loc></url>
+  <url><loc>https://www.example.com/pages/care-guide.html</loc></url>
+</urlset>

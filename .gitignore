@@ -1,0 +1,27 @@
+# Dependências e builds
+node_modules/
+dist/
+.cache/
+
+# Segredos e configuração local (nunca versionar)
+.env
+.env.*
+*.pem
+*.key
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+
+# Ficheiros de trabalho de imagem (guardar só os exports finais otimizados)
+*.psd
+*.xcf
+*.kra
+assets/images/_originals/
+
+# Configuração local do Claude Code
+.claude/

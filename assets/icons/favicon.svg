@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- FAVICON TEMPORÁRIO — substituir pelo ícone final da marca -->
+  <rect width="64" height="64" fill="#071114"/>
+  <g fill="none" stroke="#70e1d1" stroke-width="2" stroke-linecap="round">
+    <path d="M18 48C22 34 30 22 46 16"/>
+    <path d="M18 48C26 40 38 36 50 38"/>
+    <path d="M18 48C28 46 40 48 48 54"/>
+  </g>
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#e9e6de" font-style="italic">L</text>
+</svg>

@@ -1,0 +1,7 @@
+# robots.txt — LOROSAE BETTA®
+# Enquanto o site for uma demonstração, mantenha o bloqueio abaixo.
+# Antes de publicar a versão real: remover "Disallow: /" e atualizar o URL do sitemap.
+User-agent: *
+Disallow: /
+
+Sitemap: https://www.example.com/sitemap.xml

@@ -1,0 +1,120 @@
+/* ==========================================================================
+   LOROSAE BETTA® — animations.css
+   Estados iniciais das animações GSAP (evitam "flash" antes de animar),
+   loader "Aquário" e regras de movimento reduzido.
+
+   .js-anim  → posto no <html> por um script inline só sem reduced-motion;
+               retirado por failsafe se o JavaScript/GSAP falhar.
+   Aqui só se usam opacity / visibility / clip-path; transformações são do GSAP.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.js-anim .hero__media { clip-path: inset(6% 6% 6% 6% round var(--radius-3xl)); opacity: 0; }
+.js-anim .hero__mark span > i,
+.js-anim .hero__title .line__inner { visibility: hidden; }
+.js-anim [data-hero-fade] { opacity: 0; visibility: hidden; }
+.js-anim body[data-page="home"] .site-header__bar,
+.js-anim body[data-page="home"] .site-header__notice { opacity: 0; }
+
+/* ---------- Revelações por scroll ---------- */
+.js-anim [data-reveal],
+.js-anim [data-stagger] > *,
+.js-anim [data-pdp-in] { opacity: 0; visibility: hidden; }
+/* máscara arredondada: a imagem nasce de um retângulo suave mais pequeno */
+.js-anim [data-mask] { clip-path: inset(10% 10% 10% 10% round var(--radius-3xl)); opacity: 0; }
+.js-anim [data-words] .w { opacity: 0.16; }
+.js-anim [data-split] .sw__i { visibility: hidden; }
+
+.sw { display: inline-block; overflow: hidden; vertical-align: top; padding-block: 0.14em; margin-block: -0.14em; }
+.sw__i { display: inline-block; }
+
+/* ==========================================================================
+   LOADER "AQUÁRIO" (3 s) — js/loader.js
+   Visível apenas quando <html> tem .has-loader (home, 1.ª visita da sessão).
+   ========================================================================== */
+.loader { display: none; }
+.has-loader .loader {
+  display: block; position: fixed; inset: 0; z-index: 500; overflow: hidden;
+  background: #04090b; color: var(--text-primary);
+}
+.has-loader body { overflow: hidden; }
+.has-loader .hero__media { clip-path: none; opacity: 1; }
+
+.loader__water {
+  position: absolute; inset: -12%;
+  background: radial-gradient(ellipse 70% 55% at 55% 38%, rgba(18, 54, 66, 0.95) 0%, rgba(11, 32, 39, 0.9) 45%, rgba(4, 9, 11, 1) 100%);
+}
+.loader__glow {
+  position: absolute; left: 50%; top: -30%; width: 120vmax; aspect-ratio: 1; translate: -50% 0; border-radius: 50%;
+  background: radial-gradient(circle, rgba(112, 225, 209, 0.16) 0%, rgba(112, 225, 209, 0.04) 35%, rgba(112, 225, 209, 0) 60%);
+}
+.loader__shafts i {
+  position: absolute; top: -20%; height: 140%; width: 11vw; border-radius: 0 0 50% 50%;
+  background: linear-gradient(180deg, rgba(160, 240, 228, 0.18), rgba(112, 225, 209, 0) 70%);
+  transform: skewX(-12deg); transform-origin: top center;
+}
+.loader__shafts i:nth-child(1) { left: 18%; }
+.loader__shafts i:nth-child(2) { left: 44%; width: 6vw; }
+.loader__shafts i:nth-child(3) { left: 66%; width: 15vw; }
+.loader__shafts i:nth-child(4) { left: 84%; width: 5vw; }
+.loader__canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* Peixes: fotografias reais com máscara suave (fundem-se na água escura) */
+.loader__fish {
+  position: absolute; top: 50%; left: 50%; aspect-ratio: 4 / 5; pointer-events: none; will-change: transform;
+  -webkit-mask-image: radial-gradient(ellipse 48% 40% at 50% 52%, #000 52%, transparent 100%);
+  mask-image: radial-gradient(ellipse 48% 40% at 50% 52%, #000 52%, transparent 100%);
+}
+.loader__fish img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s; }
+.loader__fish img.is-ready { opacity: 1; }
+.loader__fish--near { width: min(46vw, 640px); margin: calc(min(46vw, 640px) * -0.625) 0 0 calc(min(46vw, 640px) * -0.5); }
+.loader__fish--mid { width: min(30vw, 420px); margin: calc(min(30vw, 420px) * -0.625) 0 0 calc(min(30vw, 420px) * -0.5); }
+.loader__fish--far { width: min(19vw, 270px); margin: calc(min(19vw, 270px) * -0.625) 0 0 calc(min(19vw, 270px) * -0.5); }
+
+.has-loader .loader__brand { opacity: 0; }
+.loader__brand { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; text-align: center; pointer-events: none; gap: 1rem; }
+.loader__name { font-family: var(--font-display); font-weight: 300; text-transform: uppercase; font-size: clamp(1.9rem, 1rem + 4vw, 4.6rem); letter-spacing: 0.32em; padding-left: 0.32em; line-height: 1.05; text-shadow: 0 4px 30px rgba(4, 9, 11, 0.8); }
+.loader__name > span:last-child { color: var(--accent-aqua); font-style: italic; }
+.loader__tag { font-family: var(--font-display); font-style: italic; font-size: clamp(1.05rem, 0.8rem + 0.9vw, 1.5rem); color: rgba(242, 246, 245, 0.86); }
+.loader__tag [data-word] { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; }
+.loader__tag i { display: inline-block; font-style: inherit; }
+.loader__line { width: 4rem; height: 1px; border-radius: 1px; background: var(--accent-aqua); transform-origin: center; }
+.loader__skip {
+  position: absolute; right: var(--edge); bottom: max(var(--edge), env(safe-area-inset-bottom)); min-height: 2.75rem; padding: 0 1.2rem;
+  border-radius: var(--radius-pill); border: 1px solid var(--line); background: rgba(7, 17, 20, 0.4);
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary);
+  transition: color 0.3s, border-color 0.3s;
+}
+.loader__skip:hover { color: var(--text-primary); border-color: var(--line-strong); }
+
+/* Entrada simplificada (prefers-reduced-motion): só a marca, sem movimento */
+.loader--reduced .loader__fish,
+.loader--reduced .loader__canvas,
+.loader--reduced .loader__shafts,
+.loader--reduced .loader__skip { display: none; }
+
+/* ---------- Luz e partículas do hero ---------- */
+.hero__light { z-index: -3; pointer-events: none; }
+.hero__light i { position: absolute; top: -20%; height: 140%; width: 20vw; background: linear-gradient(180deg, rgba(112, 225, 209, 0.13), rgba(112, 225, 209, 0) 70%); transform: skewX(-14deg); opacity: 0; }
+.hero__light i:nth-child(1) { left: 46%; }
+.hero__light i:nth-child(2) { left: 70%; width: 11vw; }
+.hero__particles { z-index: -2; pointer-events: none; }
+
+/* ---------- Transição entre páginas (progressive enhancement) ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.35s; }
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .btn::before, .variety__media img, .gallery__btn img, .guide-row__title, .link-arrow::after, .product-card, .gallery__cap { transition-duration: 0.01ms !important; }
+}
+
+/* ---------- Ecrãs estreitos: loader adaptado ---------- */
+@media (max-width: 700px) {
+  .loader__fish--near { width: 88vw; margin: -55vw 0 0 -44vw; }
+  .loader__fish--mid { width: 58vw; margin: -36.25vw 0 0 -29vw; }
+  .loader__fish--far { width: 38vw; margin: -23.75vw 0 0 -19vw; }
+  .loader__name { letter-spacing: 0.18em; padding-left: 0.18em; font-size: 1.7rem; }
+}

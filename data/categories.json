@@ -1,0 +1,83 @@
+{
+  "_note": "Categorias ILUSTRATIVAS. Na home só aparecem as variedades com peixes publicados (as outras ficam prontas para quando houver stock e fotografia própria). Algumas imagens reutilizam provisoriamente fotografias de produtos até existirem as dedicadas em assets/images/varieties/.",
+  "categories": [
+    {
+      "id": "halfmoon",
+      "name": "Halfmoon",
+      "index": "01",
+      "tagline": "A cauda em meia-lua",
+      "description": "Cauda larga que se abre em forma de D, com grande amplitude quando o peixe a exibe.",
+      "image": "assets/images/products/lb-abissal-01.jpg",
+      "alt": "Betta Halfmoon com a cauda totalmente aberta sobre fundo escuro",
+      "tint": [
+        "#2b6cb0",
+        "#0b1a3a"
+      ]
+    },
+    {
+      "id": "crowntail",
+      "name": "Crowntail",
+      "index": "02",
+      "tagline": "Raios em forma de coroa",
+      "description": "Os raios das barbatanas prolongam-se para lá da membrana, criando um contorno recortado, quase rendilhado.",
+      "image": "assets/images/products/lb-ambar-01.jpg",
+      "alt": "Betta Crowntail com raios das barbatanas em forma de coroa",
+      "tint": [
+        "#c0492f",
+        "#2a0f0c"
+      ]
+    },
+    {
+      "id": "plakat",
+      "name": "Plakat",
+      "index": "03",
+      "tagline": "Linhas curtas, presença direta",
+      "description": "Barbatanas curtas e corpo compacto. Uma silhueta limpa que deixa a cor e o brilho das escamas em primeiro plano.",
+      "image": "assets/images/varieties/lb-variety-plakat.jpg",
+      "alt": "Betta Plakat de barbatanas curtas e corpo compacto",
+      "tint": [
+        "#2a9d8f",
+        "#06201f"
+      ]
+    },
+    {
+      "id": "dumbo-ear",
+      "name": "Dumbo Ear",
+      "index": "04",
+      "tagline": "Barbatanas peitorais amplas",
+      "description": "As barbatanas peitorais, de grandes dimensões, lembram asas ou orelhas e movem-se de forma muito expressiva.",
+      "image": "assets/images/products/lb-nevoa-01.jpg",
+      "alt": "Betta Dumbo Ear com barbatanas peitorais grandes e translúcidas",
+      "tint": [
+        "#8f9fe0",
+        "#12162e"
+      ]
+    },
+    {
+      "id": "veiltail",
+      "name": "Veiltail",
+      "index": "05",
+      "tagline": "O véu que cai",
+      "description": "Cauda longa que cai em forma de véu. Uma das silhuetas mais clássicas e fluidas do Betta.",
+      "image": "assets/images/products/lb-cobre-01.jpg",
+      "alt": "Betta Veiltail com cauda longa e caída em forma de véu",
+      "tint": [
+        "#d98b4f",
+        "#2b1608"
+      ]
+    },
+    {
+      "id": "double-tail",
+      "name": "Double Tail",
+      "index": "06",
+      "tagline": "Duas caudas, uma só presença",
+      "description": "Cauda dividida em dois lóbulos, geralmente acompanhada de uma barbatana dorsal mais larga.",
+      "image": "assets/images/varieties/lb-variety-double-tail.jpg",
+      "alt": "Betta Double Tail com cauda dividida em dois lóbulos",
+      "tint": [
+        "#b3283d",
+        "#240810"
+      ]
+    }
+  ]
+}
