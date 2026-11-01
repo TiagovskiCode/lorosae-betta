@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LOROSAE BETTA® — gallery.js
+   AQUORA — gallery.js
    Lightbox acessível para a galeria: abre a partir da grelha, navegação por
    teclado (←/→/Home/End/Esc), swipe em ecrãs táteis, trap de foco, regresso
    do foco ao elemento de origem e transições GSAP (com fallback sem movimento).
@@ -25,7 +25,7 @@ export function initGallery(grid, items) {
       <div class="lightbox__img" data-lb-img></div>
       <figcaption class="lightbox__cap">
         <span data-lb-title></span>
-        <a class="link-arrow" data-lb-link href="#"><span>Ver ficha</span><span class="link-arrow__icon">${ARROW_SVG}</span></a>
+        <a class="link-arrow" data-lb-link href="#"><span>Ver ficha</span><span class="arrow" aria-hidden="true">${ARROW_SVG}</span></a>
         <span class="lightbox__count" data-lb-count aria-live="polite"></span>
       </figcaption>
     </figure>

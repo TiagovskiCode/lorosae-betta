@@ -1,7 +1,6 @@
-# robots.txt — LOROSAE BETTA®
-# Enquanto o site for uma demonstração, mantenha o bloqueio abaixo.
-# Antes de publicar a versão real: remover "Disallow: /" e atualizar o URL do sitemap.
+# robots.txt — AQUORA
+# Projeto conceptual: a indexação está desativada para não ser confundido com uma loja em funcionamento.
 User-agent: *
 Disallow: /
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://tiagovskicode.github.io/lorosae-betta/sitemap.xml

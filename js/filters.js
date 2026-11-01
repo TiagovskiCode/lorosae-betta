@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LOROSAE BETTA® — filters.js
+   AQUORA — filters.js
    Página da loja: pesquisa, filtro por variedade, disponibilidade, ordenação,
    contagens, estado vazio e sincronização com o URL (?q=&variedade=&disp=&ordem=).
    ========================================================================== */

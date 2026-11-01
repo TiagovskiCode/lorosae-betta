@@ -1,10 +1,10 @@
 /* ==========================================================================
-   LOROSAE BETTA® — products.js
+   AQUORA — products.js
    Carregamento do catálogo (data/products.json + data/categories.json) e
-   renderização: cartões, destaques, variedades e página de detalhe.
+   renderização: cartões, destaques, variedades, galeria e ficha de produto.
    ========================================================================== */
-import { CONFIG, STATUS, t, url, esc, formatPrice, fetchJson, imgHtml, hydrateImages, ARROW_SVG, $ } from "./utils.js";
-import { crossfade, animateProductEntrance } from "./animations.js";
+import { CONFIG, STATUS, t, url, esc, formatPrice, fetchJson, imgHtml, hydrateImages, specimenNo, ARROW_SVG, $, $$ } from "./utils.js";
+import { animateProductEntrance } from "./animations.js";
 
 const state = { products: [], categories: [], loaded: false };
 let loading = null;
@@ -30,36 +30,28 @@ export const productUrl = (p) => url(`pages/product.html?produto=${encodeURIComp
 export const shopUrl = (params = "") => url(`pages/shop.html${params ? "?" + params : ""}`);
 
 const nameList = (arr) => arr.join(" · ");
+const arrow = `<span class="arrow" aria-hidden="true">${ARROW_SVG}</span>`;
 
 /* ---------- Cartão ---------- */
-export function productCardHtml(p, { layout = "std", reveal = true } = {}) {
-  const cat = getCategory(p.category);
+export function productCardHtml(p, { reveal = true } = {}) {
   const status = STATUS[p.status] || STATUS.sold;
   const buyable = isBuyable(p);
   const link = productUrl(p);
-  const addBtn = buyable
-    ? `<button type="button" class="btn btn--small btn--primary btn--magnetic" data-add="${esc(p.id)}" data-magnetic><span class="btn__label">${t("add.short")}</span></button>`
-    : `<span class="small muted" aria-label="${t("add.unavailable")}">${t(status.key)}</span>`;
-  const demoFlag = CONFIG.demoMode ? ` <span class="visually-hidden">(dados de demonstração)</span>` : "";
-  return `<article class="product-card${buyable ? "" : " is-unavailable"}" data-layout="${esc(layout)}" data-id="${esc(p.id)}"${reveal ? " data-reveal" : ""}>
-  <a class="product-card__media frame" href="${link}" aria-label="${esc(p.name)} — ${t("product.details")}" tabindex="-1">
-    ${imgHtml({ path: p.images.primary, alt: p.images.alt, kind: "product", tint: p.tint, width: 1000, height: 1250 })}
+  const action = buyable
+    ? `<button type="button" class="add-btn" data-add="${esc(p.id)}" aria-label="${t("add.label")}: ${esc(p.name)}"><span class="btn__label">${t("add.short")}</span><span class="add-btn__plus" aria-hidden="true"></span></button>`
+    : `<span class="status status--${esc(p.status)}">${t(status.key)}</span>`;
+  return `<article class="product-card${buyable ? "" : " is-unavailable"}" data-id="${esc(p.id)}"${reveal ? " data-reveal" : ""}>
+  <a class="product-card__media frame" href="${link}" tabindex="-1" aria-hidden="true">
+    ${imgHtml({ path: p.images.primary, alt: "", kind: "product", tint: p.tint, width: 1000, height: 1250 })}
   </a>
-  <span class="badge badge--${esc(p.status)}">${t(status.key)}</span>
+  <span class="product-card__index" aria-hidden="true">${specimenNo(p)}</span>
   <div class="product-card__body">
-    <div class="product-card__head">
-      <p class="product-card__meta">${esc(p.tail)} · ${esc(nameList(p.colors))}</p>
-      <h3 class="product-card__name"><a href="${link}">${esc(p.name)}</a></h3>
-    </div>
-    <div class="product-card__tail">
-      <p class="product-card__desc">${esc(p.shortDescription)}${demoFlag}</p>
-    </div>
+    <p class="product-card__meta">${esc(p.tail)}${buyable ? "" : ` · ${t(status.key)}`}</p>
+    <h3 class="product-card__name"><a href="${link}">${esc(p.name)}</a></h3>
+    <p class="product-card__colors">${esc(nameList(p.colors))}</p>
     <div class="product-card__foot">
-      <span class="price" aria-label="Preço">${formatPrice(p.price)}</span>
-      <div class="product-card__actions">
-        <a class="link-arrow" href="${link}"><span>${t("product.details")}</span><span class="link-arrow__icon">${ARROW_SVG}</span><span class="visually-hidden"> — ${esc(p.name)}</span></a>
-        ${addBtn}
-      </div>
+      <span class="product-card__price"><span class="visually-hidden">Preço: </span>${formatPrice(p.price)}</span>
+      <div class="product-card__actions">${action}</div>
     </div>
   </div>
 </article>`;
@@ -68,7 +60,12 @@ export function productCardHtml(p, { layout = "std", reveal = true } = {}) {
 /* ---------- Destaques (home) ---------- */
 export function renderFeatured(container) {
   const featured = state.products.filter((p) => p.featured);
-  container.innerHTML = featured.map((p) => productCardHtml(p, { layout: p.layout || "std" })).join("");
+  const available = state.products.filter(isBuyable).length;
+  container.innerHTML = featured.map((p) => productCardHtml(p)).join("") + `
+  <div class="featured__more" data-reveal>
+    <p>${state.products.length} exemplares,<br><em>${available} disponíveis.</em></p>
+    <a class="btn" href="${shopUrl()}"><span>Ver toda a coleção</span>${arrow.replace("arrow", "btn__arrow")}</a>
+  </div>`;
   hydrateImages(container);
 }
 
@@ -82,38 +79,33 @@ export function renderSpotlight(container) {
   const detail = p.images.gallery?.[0];
   container.innerHTML = `
   <div class="spotlight__media">
-    <a class="frame spotlight__main" href="${link}" data-mask data-parallax aria-label="${esc(p.name)} — ${t("product.details")}" tabindex="-1">
-      ${imgHtml({ path: p.images.primary, alt: p.images.alt, kind: "product", tint: p.tint, width: 1000, height: 1250 })}
+    <a class="frame spotlight__main" href="${link}" data-mask data-parallax tabindex="-1" aria-hidden="true">
+      ${imgHtml({ path: p.images.primary, alt: "", kind: "product", tint: p.tint, width: 1000, height: 1250 })}
     </a>
-    ${detail ? `<div class="frame spotlight__detail" data-reveal>${imgHtml({ path: detail, alt: `Detalhe das escamas e barbatanas de ${p.name}`, kind: "product", tint: p.tint, width: 600, height: 750 })}</div>` : ""}
+    ${detail ? `<div class="frame spotlight__detail" data-reveal>${imgHtml({ path: detail, alt: `Detalhe das escamas e barbatanas de ${p.name}`, kind: "product", tint: p.tint, width: 600, height: 750, sizes: "(max-width: 900px) 42vw, 18vw" })}</div>` : ""}
   </div>
   <div class="spotlight__text">
-    <p class="eyebrow" data-reveal>Em destaque · ${esc(cat?.name || p.tail)}</p>
-    <h2 class="spotlight__title" data-split>${esc(p.name)}</h2>
+    <p class="eyebrow" data-reveal>Em destaque · ${specimenNo(p)}</p>
+    <h2 class="spotlight__title" id="spotlight-title" data-split>${esc(p.name)}</h2>
     <p class="lead" data-reveal>${esc(p.colorDescription)}</p>
-    <dl class="spotlight__specs" data-stagger>
+    <dl class="specs" data-stagger>
       <div><dt>Variedade</dt><dd>${esc(cat?.name || p.tail)}</dd></div>
-      <div><dt>Cor</dt><dd>${esc(p.colors.join(" · "))}</dd></div>
+      <div><dt>Cor</dt><dd>${esc(nameList(p.colors))}</dd></div>
       <div><dt>Estado</dt><dd>${t((STATUS[p.status] || STATUS.sold).key)}</dd></div>
       <div><dt>Preço</dt><dd>${formatPrice(p.price)}</dd></div>
     </dl>
-    <div class="prose" data-reveal><p>${esc(p.description)}</p></div>
     <div class="spotlight__cta" data-reveal>
-      <a class="btn btn--primary btn--magnetic" data-magnetic href="${link}"><span>${t("product.details")}</span><span class="btn__arrow">${ARROW_SVG}</span></a>
-      ${buyable ? `<button type="button" class="btn btn--ghost btn--magnetic" data-magnetic data-add="${esc(p.id)}"><span class="btn__label">${t("add.label")}</span></button>` : ""}
+      <a class="btn btn--primary" href="${link}"><span>Conhecer ${esc(p.name)}</span><span class="btn__arrow" aria-hidden="true">${ARROW_SVG}</span></a>
+      ${buyable ? `<button type="button" class="link-arrow" data-add="${esc(p.id)}"><span class="btn__label">${t("add.label")}</span></button>` : ""}
     </div>
   </div>`;
   hydrateImages(container);
 
-  // Cartão sobreposto no hero, ligado ao mesmo peixe
-  const chip = $("[data-hero-chip]");
-  if (chip) {
-    $("[data-hero-chip-name]", chip).textContent = `${p.name} · ${cat?.name || p.tail}`;
-    const box = $("[data-hero-chip-img]", chip);
-    box.innerHTML = imgHtml({ path: p.images.primary, alt: "", kind: "product", tint: p.tint, width: 104, height: 104, sizes: "60px" });
-    hydrateImages(box);
-    chip.setAttribute("aria-label", `Peixe em destaque: ${p.name}`);
-    chip.hidden = false;
+  // Ligação no rodapé do hero para o mesmo peixe
+  const feature = $("[data-hero-feature]");
+  if (feature) {
+    $("[data-hero-feature-name]", feature).textContent = p.name;
+    feature.hidden = false;
   }
 }
 
@@ -123,52 +115,59 @@ export function galleryItems() {
     .filter((p) => p.images.gallery?.length)
     .map((p) => {
       const cat = getCategory(p.category);
-      return { src: p.images.gallery[0], alt: `Detalhe macro de ${p.name}: escamas e barbatanas`, title: `${p.name} — ${cat?.name || p.tail}`, href: productUrl(p), tint: p.tint };
+      return { src: p.images.gallery[0], alt: `Detalhe macro de ${p.name}: escamas e barbatanas`, name: p.name, title: `${p.name} — ${cat?.name || p.tail}`, variety: cat?.name || p.tail, href: productUrl(p), tint: p.tint };
     });
 }
 
 export function renderGalleryGrid(container, items) {
   container.innerHTML = items
-    .map((it, i) => `<li class="gallery__item" data-reveal><button type="button" class="gallery__btn frame" data-gallery-index="${i}" aria-label="Ampliar: ${esc(it.title)}">${imgHtml({ path: it.src, alt: it.alt, kind: "product", tint: it.tint, width: 600, height: 750 })}<span class="gallery__cap" aria-hidden="true">${esc(it.title)}</span></button></li>`)
+    .map((it, i) => `<li class="gallery__item">
+  <button type="button" class="gallery__btn frame" data-gallery-index="${i}" aria-label="Ampliar detalhe de ${esc(it.name)}">${imgHtml({ path: it.src, alt: it.alt, kind: "product", tint: it.tint, width: 600, height: 750, sizes: "(max-width: 900px) 72vw, 26vw" })}</button>
+  <p class="gallery__cap"><strong>${esc(it.name)}</strong><span>${esc(it.variety)}</span></p>
+</li>`)
     .join("");
   hydrateImages(container);
 }
 
-/* ---------- Variedades (home) ---------- */
+/* ---------- Variedades (home): índice com pré-visualização ---------- */
 export function renderVarieties(container) {
-  // Só variedades com peixes publicados: uma categoria sem stock nem fotografia própria não é apresentada
+  // Só variedades com peixes publicados
   const visible = state.categories.filter((c) => state.products.some((p) => p.category === c.id));
-  container.style.setProperty("--cols", visible.length);
-  container.style.setProperty("--cols-md", visible.length % 3 === 0 ? 3 : 2);
-  container.innerHTML = visible
-    .map((c) => {
-      const total = state.products.filter((p) => p.category === c.id).length;
+  const list = $("[data-varieties-list]", container);
+  const preview = $("[data-varieties-preview]", container);
+  list.innerHTML = visible
+    .map((c, i) => {
       const avail = state.products.filter((p) => p.category === c.id && isBuyable(p)).length;
-      const countText = avail > 0 ? (avail === 1 ? "1 disponível" : `${avail} disponíveis`) : total > 0 ? "Sem exemplares disponíveis" : "Sem exemplares de momento";
-      return `<li class="variety" data-reveal>
-  <div class="variety__media frame">${imgHtml({ path: c.image, alt: c.alt, kind: "variety", tint: c.tint, width: 900, height: 1200 })}</div>
-  <div class="variety__body">
-    <span class="variety__idx">${esc(c.index)}</span>
-    <h3 class="variety__name"><a class="variety__link" href="${shopUrl("variedade=" + encodeURIComponent(c.id))}">${esc(c.name)}</a></h3>
-    <p class="variety__tag">${esc(c.tagline)}</p>
-    <p class="variety__count"><span>${countText}</span><span class="link-arrow__icon" aria-hidden="true">${ARROW_SVG}</span></p>
-  </div>
+      const countText = avail > 0 ? (avail === 1 ? "1 disponível" : `${avail} disponíveis`) : "Sem disponibilidade";
+      return `<li class="variety" data-variety-index="${i}">
+  <a class="variety__link" href="${shopUrl("variedade=" + encodeURIComponent(c.id))}">
+    <span class="variety__idx" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+    <span class="variety__thumb frame" aria-hidden="true">${imgHtml({ path: c.image, alt: "", kind: "variety", tint: c.tint, width: 180, height: 225, sizes: "80px" })}</span>
+    <span class="variety__text"><span class="variety__name">${esc(c.name)}</span><span class="variety__tag">${esc(c.tagline)}</span></span>
+    <span class="variety__count">${countText}</span>
+  </a>
 </li>`;
     })
     .join("");
+  if (preview) {
+    preview.innerHTML = visible.map((c, i) => imgHtml({ path: c.image, alt: "", kind: "variety", tint: c.tint, width: 900, height: 1125, cls: i === 0 ? "is-active" : "" })).join("");
+    const imgs = $$("img", preview);
+    const items = $$(".variety", list);
+    const activate = (i) => {
+      imgs.forEach((im, n) => im.classList.toggle("is-active", n === i));
+      items.forEach((el, n) => el.classList.toggle("is-active", n === i));
+    };
+    list.addEventListener("pointerover", (e) => { const li = e.target.closest(".variety"); if (li) activate(Number(li.dataset.varietyIndex)); });
+    list.addEventListener("focusin", (e) => { const li = e.target.closest(".variety"); if (li) activate(Number(li.dataset.varietyIndex)); });
+    activate(0);
+  }
   hydrateImages(container);
 }
 
-/* ---------- Detalhe do produto ---------- */
-function specRow(label, value, field, p) {
-  const confirmed = p.confirmed?.includes(field);
+/* ---------- Ficha de produto ---------- */
+function specRow(label, value) {
   const missing = value === null || value === undefined || value === "";
-  const flag = missing
-    ? ""
-    : confirmed
-      ? `<span class="data-flag data-flag--ok">${t("product.confirmed")}</span>`
-      : CONFIG.demoMode ? `<span class="data-flag">${t("product.demoData")}</span>` : "";
-  return `<tr><th scope="row">${esc(label)}</th><td>${missing ? `<span class="pending">${t("product.pending")}</span>` : esc(value)}${flag}</td></tr>`;
+  return `<div><dt>${esc(label)}</dt><dd>${missing ? `<span class="pending">${t("product.pending")}</span>` : esc(value)}</dd></div>`;
 }
 
 function relatedFor(p, n = 3) {
@@ -177,13 +176,21 @@ function relatedFor(p, n = 3) {
   return [...same, ...others].sort((a, b) => Number(isBuyable(b)) - Number(isBuyable(a))).slice(0, n);
 }
 
+const CARE = [
+  ["Aquário", "Pelo menos 20 litros, com tampa, filtro de fluxo suave e aquecedor com termóstato."],
+  ["Temperatura", "Água estável, em geral entre 24 e 27 °C. Evite variações bruscas."],
+  ["Água", "Condicionador sempre, e um aquário já estabilizado (ciclado) antes da chegada."],
+  ["Convivência", "Machos adultos não devem partilhar o mesmo espaço. Qualquer companhia requer estudo."],
+  ["Chegada", "Aclimatação gradual, com luz baixa nas primeiras horas."]
+];
+
 export function renderProductPage(root) {
   const slug = new URLSearchParams(location.search).get("produto");
   const p = slug && getProduct(slug);
   if (!p) {
-    document.title = `${t("product.notFound.title")} · ${CONFIG.brand}`;
-    root.innerHTML = `<div class="container"><div class="empty-state" role="alert">
-      <h1 class="display" style="font-size:clamp(2rem,1.4rem + 2vw,3.2rem);text-transform:none">${t("product.notFound.title")}</h1>
+    document.title = `${t("product.notFound.title")} — ${CONFIG.brand}`;
+    root.innerHTML = `<div class="container"><div class="empty-state" role="alert" style="margin-top:3rem">
+      <h1 class="display" style="font-size:var(--fs-xl)">${t("product.notFound.title")}</h1>
       <p>${t("product.notFound.text")}</p>
       <a class="btn btn--primary" href="${shopUrl()}"><span>${t("cart.empty.cta")}</span></a></div></div>`;
     return;
@@ -193,14 +200,17 @@ export function renderProductPage(root) {
   const status = STATUS[p.status] || STATUS.sold;
   const buyable = isBuyable(p);
   const images = [p.images.primary, ...(p.images.gallery || [])];
-  document.title = `${p.name} · ${p.tail} — ${CONFIG.brand}`;
+  document.title = `${p.name} · Betta ${p.tail} — ${CONFIG.brand}`;
   const desc = document.querySelector('meta[name="description"]');
   if (desc) desc.content = `${p.name}, Betta ${p.tail} (${nameList(p.colors)}). ${p.shortDescription}`;
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.content = document.title;
 
-  const stockLine = buyable ? `${p.stock} exemplar${p.stock === 1 ? "" : "es"} em stock (demonstração)` : t(status.key);
+  const stockLine = buyable
+    ? p.stock === 1 ? "Exemplar único." : `${p.stock} exemplares disponíveis.`
+    : `${t(status.key)}.`;
   const related = relatedFor(p);
+  const alts = [p.images.alt, `Detalhe das escamas e barbatanas de ${p.name}`];
 
   root.innerHTML = `
 <div class="container">
@@ -213,89 +223,89 @@ export function renderProductPage(root) {
     </ol>
   </nav>
   <div class="grid-12 pdp__grid">
-    <div class="pdp__gallery">
-      <div class="pdp__main frame" data-pdp-main data-mask>
-        ${imgHtml({ path: images[0], alt: p.images.alt, kind: "product", tint: p.tint, width: 1000, height: 1250, eager: true })}
+    <div class="pdp__gallery" aria-label="Fotografias de ${esc(p.name)}" role="region">
+      <div class="pdp__track" data-pdp-track tabindex="0">
+        ${images.map((img, i) => `<div class="pdp__slide frame"${i === 0 ? " data-mask" : " data-reveal"}>${imgHtml({ path: img, alt: alts[i] || alts[1], kind: "product", tint: p.tint, width: 1000, height: 1250, eager: i === 0, sizes: "(max-width: 900px) 100vw, 55vw" })}</div>`).join("")}
       </div>
-      ${images.length > 1 ? `<div class="pdp__thumbs" role="group" aria-label="Galeria de ${esc(p.name)}">
-        ${images.map((img, i) => `<button type="button" class="pdp__thumb" data-thumb="${i}" aria-label="Ver imagem ${i + 1} de ${images.length}" aria-current="${i === 0}">${imgHtml({ path: img, alt: "", kind: "product", tint: p.tint, width: 200, height: 250 })}</button>`).join("")}
-      </div>` : ""}
+      ${images.length > 1 ? `<p class="pdp__counter" data-pdp-counter aria-hidden="true">1 / ${images.length}</p>` : ""}
     </div>
     <div class="pdp__info">
-      <div data-pdp-in><div style="display:flex;gap:.6rem;flex-wrap:wrap"><span class="badge badge--${esc(p.status)}" style="position:static">${t(status.key)}</span>${CONFIG.demoMode ? `<span class="badge badge--demo">${t("product.demoData")}</span>` : ""}</div></div>
-      <div data-pdp-in>
-        <p class="pdp__variety">${esc(p.tail)}</p>
+      <div class="pdp__head" data-pdp-in>
+        <p class="pdp__ref">${specimenNo(p)} · ${esc(cat?.name || p.tail)}</p>
         <h1 class="pdp__title">${esc(p.name)}</h1>
+        <p class="pdp__variety">${esc(nameList(p.colors))}</p>
       </div>
-      <p class="pdp__price" data-pdp-in>${formatPrice(p.price)}</p>
-      <p class="lead muted" data-pdp-in>${esc(p.shortDescription)}</p>
+      <p class="muted" data-pdp-in>${esc(p.shortDescription)}</p>
+      <div class="pdp__price-row" data-pdp-in>
+        <p class="pdp__price"><span class="visually-hidden">Preço: </span>${formatPrice(p.price)}</p>
+        <span class="status status--${esc(p.status)}">${t(status.key)}</span>
+      </div>
       <div class="pdp__buy" data-pdp-in>
-        <div class="pdp__buy-row">
-          ${buyable
-            ? `<button type="button" class="btn btn--primary btn--magnetic" data-add="${esc(p.id)}" data-magnetic><span class="btn__label">${t("add.label")}</span></button>`
-            : `<span class="btn btn--ghost" aria-disabled="true">${t(status.key)}</span>`}
-        </div>
-        <p class="small muted">${esc(stockLine)}. Os nossos peixes são animais vivos: o envio é confirmado pela loja antes de qualquer pagamento.</p>
+        ${buyable
+          ? `<button type="button" class="btn btn--primary btn--block" data-add="${esc(p.id)}"><span class="btn__label">${t("add.label")}</span></button>`
+          : `<a class="btn btn--block" href="${url("index.html#contacto")}"><span>Pedir informação</span></a>`}
+        <p class="pdp__note">${esc(stockLine)} Os peixes são animais vivos: a disponibilidade e o envio são confirmados antes de qualquer pagamento.</p>
       </div>
-      ${CONFIG.demoMode ? `<p class="demo-banner" data-pdp-in>Dados de demonstração: nome, preço, descrição e disponibilidade deste exemplar são ilustrativos e serão substituídos pelo stock real.</p>` : ""}
-      <table class="spec-table" data-pdp-in>
-        <caption class="visually-hidden">Ficha técnica de ${esc(p.name)}</caption>
-        <tbody>
-          ${specRow("Variedade", cat?.name || p.tail, "category", p)}
-          ${specRow("Tipo de cauda", p.tail, "tail", p)}
-          ${specRow("Cor", nameList(p.colors), "colors", p)}
-          ${specRow("Sexo", p.sex, "sex", p)}
-          ${specRow("Idade", p.ageMonths != null ? `${p.ageMonths} meses` : null, "ageMonths", p)}
-          ${specRow("Tamanho aprox.", p.sizeCm != null ? `${p.sizeCm} cm` : null, "sizeCm", p)}
-          ${specRow("Referência", p.id, "id", p)}
-        </tbody>
-      </table>
+      <dl class="spec-list" data-pdp-in>
+        ${specRow("Variedade", cat?.name || p.tail)}
+        ${specRow("Tipo de cauda", p.tail)}
+        ${specRow("Cor", nameList(p.colors))}
+        ${specRow("Sexo", p.sex)}
+        ${specRow("Idade", p.ageMonths != null ? `${p.ageMonths} meses` : null)}
+        ${specRow("Tamanho aprox.", p.sizeCm != null ? `${p.sizeCm} cm` : null)}
+        ${specRow("Referência", p.id.toUpperCase())}
+      </dl>
     </div>
   </div>
 
-  <div class="grid-12 pdp__details">
-    <div class="pdp__desc" data-reveal>
-      <p class="eyebrow">Sobre este peixe</p>
-      <h2 style="font-size:clamp(2rem,1.4rem + 2.4vw,3.6rem);margin:1.2rem 0 1.6rem">${esc(p.colorDescription)}</h2>
-      <div class="prose"><p>${esc(p.description)}</p></div>
-    </div>
-    <aside class="pdp__care" data-reveal aria-labelledby="pdp-care-h">
-      <h2 id="pdp-care-h" style="font-size:1.8rem;margin-bottom:1.2rem">Cuidados essenciais</h2>
-      <ul>
-        <li><strong>Aquário.</strong> Recomendamos um aquário de pelo menos 20 litros, com tampa, filtro de fluxo suave e aquecedor com termóstato.</li>
-        <li><strong>Temperatura.</strong> Água estável, em geral entre 24 e 27 °C.</li>
-        <li><strong>Água.</strong> Use sempre condicionador de água e deixe o aquário estabilizar (ciclo) antes de introduzir o peixe.</li>
-        <li><strong>Convivência.</strong> Machos adultos não devem partilhar o mesmo espaço. A escolha de companhia requer cuidado.</li>
-        <li><strong>Adaptação.</strong> A chegada ao novo aquário deve ser gradual. Veja o passo a passo no guia.</li>
+  <section class="grid-12 pdp__story" aria-labelledby="pdp-story-h">
+    <p class="eyebrow" style="grid-column:1/-1" data-reveal>Sobre ${esc(p.name)}</p>
+    <h2 class="pdp__statement" id="pdp-story-h" data-split>${esc(p.colorDescription)}</h2>
+    <div class="pdp__desc prose" data-reveal><p>${esc(p.description)}</p></div>
+    ${cat ? `<aside class="pdp__variety-note" data-reveal aria-label="Sobre a variedade">
+      <p class="eyebrow eyebrow--plain">A variedade</p>
+      <h3>${esc(cat.name)} — <em>${esc(cat.tagline.toLowerCase())}</em></h3>
+      <p>${esc(cat.description)}</p>
+      <a class="link-arrow" href="${shopUrl("variedade=" + encodeURIComponent(cat.id))}"><span>Ver todos os ${esc(cat.name)}</span>${arrow}</a>
+    </aside>` : ""}
+  </section>
+</div>
+
+<section class="pdp__care" aria-labelledby="pdp-care-h">
+  <div class="container grid-12 pdp__care-grid">
+      <div class="pdp__care-head" data-reveal>
+        <p class="eyebrow">Antes de decidir</p>
+        <h2 id="pdp-care-h">Cuidados <em>essenciais</em></h2>
+        <a class="link-arrow" href="${url("pages/care-guide.html")}"><span>Ler o guia completo</span>${arrow}</a>
+      </div>
+      <ul class="pdp__care-list" data-stagger>
+        ${CARE.map(([k, v]) => `<li><strong>${k}</strong><span>${v}</span></li>`).join("")}
       </ul>
-      <p style="margin-top:1.4rem"><a class="link-arrow" href="${url("pages/care-guide.html")}"><span>Ler o guia de cuidados</span><span class="link-arrow__icon">${ARROW_SVG}</span></a></p>
-    </aside>
   </div>
+</section>
 
+<div class="container">
   <section class="related" aria-labelledby="related-h">
-    <div class="section-head" data-reveal style="margin-bottom:0">
+    <div class="section-head section-head--split" data-reveal>
       <p class="eyebrow">Continue a explorar</p>
-      <h2 id="related-h">Outros <em>Betta</em></h2>
+      <h2 id="related-h">Outros <em>exemplares</em></h2>
+      <a class="link-arrow" href="${shopUrl()}"><span>Ver toda a coleção</span>${arrow}</a>
     </div>
-    <div class="related__grid" data-related>${related.map((r) => productCardHtml(r, { layout: "std" })).join("")}</div>
+    <div class="related__grid">${related.map((r) => productCardHtml(r)).join("")}</div>
   </section>
 </div>`;
 
   hydrateImages(root);
 
-  // Galeria: transição suave entre imagens
-  const main = $("[data-pdp-main]", root);
-  root.querySelectorAll("[data-thumb]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const i = Number(btn.dataset.thumb);
-      root.querySelectorAll("[data-thumb]").forEach((b) => b.setAttribute("aria-current", String(b === btn)));
-      const img = document.createElement("div");
-      img.innerHTML = imgHtml({ path: images[i], alt: p.images.alt, kind: "product", tint: p.tint, width: 1000, height: 1250 });
-      const next = img.firstElementChild;
-      hydrateImages(img);
-      crossfade(main, next);
-    });
-  });
+  // Contador do carrossel (telemóvel)
+  const track = $("[data-pdp-track]", root);
+  const counter = $("[data-pdp-counter]", root);
+  if (track && counter) {
+    track.addEventListener("scroll", () => {
+      const i = Math.round(track.scrollLeft / track.clientWidth);
+      counter.textContent = `${i + 1} / ${images.length}`;
+    }, { passive: true });
+  }
 
   animateProductEntrance(root);
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ==========================================================================
-   LOROSAE BETTA® — tools/generate-images.mjs
+   AQUORA — tools/generate-images.mjs
    Gera as imagens descritas em IMAGE_GENERATION_BRIEF.md através da API de
    imagens da OpenAI (modelo gpt-image-1) e grava-as nos caminhos finais.
 

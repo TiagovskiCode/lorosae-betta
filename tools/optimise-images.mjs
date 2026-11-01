@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ==========================================================================
-   LOROSAE BETTA® — tools/optimise-images.mjs
+   AQUORA — tools/optimise-images.mjs
    Prepara imagens acabadas de gerar/exportar para a web:
      · converte PNG (mesmo com extensão .jpg) para JPEG verdadeiro
      · reduz para --width px (por omissão 1600 para hero/editorial, 1122 nos restantes)

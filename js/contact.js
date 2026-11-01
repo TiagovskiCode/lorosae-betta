@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LOROSAE BETTA® — contact.js
+   AQUORA — contact.js
    Formulário de contacto com validação e estados honestos.
 
    O site é estático: não existe servidor próprio. Por isso:
@@ -23,9 +23,10 @@ function renderMethods(box) {
   if (CONFIG.whatsappNumber) rows.push(["WhatsApp", `<a href="https://wa.me/${esc(CONFIG.whatsappNumber.replace(/\D/g, ""))}" target="_blank" rel="noopener">Enviar mensagem</a>`]);
   if (CONFIG.instagramUrl) rows.push(["Instagram", `<a href="${esc(CONFIG.instagramUrl)}" target="_blank" rel="noopener">Seguir</a>`]);
   if (c.address) rows.push(["Morada", esc(c.address)]);
+  // Sem contactos configurados não se mostra nada: o formulário é o canal principal
   box.innerHTML = rows.length
     ? `<dl class="contact__list">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`
-    : `<div class="placeholder-box"><h3 class="placeholder-box__title">Contactos por definir</h3><p>A loja ainda não indicou email, telefone ou redes sociais. Preencher <code>CONFIG.contact</code>, <code>CONFIG.whatsappNumber</code> e <code>CONFIG.instagramUrl</code> em <code>js/utils.js</code>.</p></div>`;
+    : `<dl class="contact__list"><div><dt>Resposta</dt><dd>Pelo email que indicar no formulário</dd></div><div><dt>Antes de comprar</dt><dd>Dúvidas sobre o peixe, o aquário e a chegada</dd></div></dl>`;
 }
 
 export function initContact() {
@@ -85,6 +86,6 @@ export function initContact() {
       return;
     }
 
-    setStatus("error", "O envio ainda não está configurado: a loja não definiu um email nem um serviço de receção. A sua mensagem NÃO foi enviada.");
+    setStatus("error", "De momento não é possível enviar mensagens por este formulário. A sua mensagem não foi enviada.");
   });
 }

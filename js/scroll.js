@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LOROSAE BETTA® — scroll.js
+   AQUORA — scroll.js
    Smooth scrolling com Lenis (14 KB), sincronizado com o ticker do GSAP e com
    o ScrollTrigger.
 

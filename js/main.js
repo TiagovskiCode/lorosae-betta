@@ -1,7 +1,7 @@
 /* ==========================================================================
-   LOROSAE BETTA® — main.js
+   AQUORA — main.js
    Ponto de entrada: monta os componentes partilhados (layout.js), comportamentos
-   gerais (FAQ, índice) e o arranque específico de cada página.
+   gerais (FAQ, índice, galeria) e o arranque específico de cada página.
    Cada página declara <body data-page="home|shop|product|cart|about|care">.
    ========================================================================== */
 import { t, $, $$, hydrateImages, prefersReducedMotion, hasGsap } from "./utils.js";
@@ -39,19 +39,35 @@ function initToc() {
   const map = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
-      if (en.isIntersecting) {
-        links.forEach((l) => l.classList.remove("is-active"));
-        map.get(en.target.id)?.classList.add("is-active");
-      }
+      if (!en.isIntersecting) return;
+      links.forEach((l) => l.classList.remove("is-active"));
+      const link = map.get(en.target.id);
+      if (!link) return;
+      link.classList.add("is-active");
+      // no telemóvel o índice é horizontal: manter a ligação ativa visível
+      const list = link.closest("ol");
+      if (list && list.scrollWidth > list.clientWidth) list.scrollTo({ left: link.offsetLeft - 16, behavior: "smooth" });
     });
   }, { rootMargin: "-30% 0px -60% 0px" });
   map.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
 }
 
+/* ---------- Galeria: setas que deslocam a faixa horizontal ---------- */
+function initGalleryNav(strip) {
+  $$("[data-gallery-step]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = strip.querySelector(".gallery__item");
+      const gap = parseFloat(getComputedStyle(strip).columnGap) || 0;
+      const step = item ? item.getBoundingClientRect().width + gap : strip.clientWidth * 0.8;
+      strip.scrollBy({ left: step * Number(btn.dataset.galleryStep), behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    });
+  });
+}
+
 /* ---------- Arranque por página ---------- */
 function showLoadError(container) {
   container.removeAttribute("aria-busy");
-  container.innerHTML = `<div class="load-error" role="alert"><strong>${t("load.error.title")}</strong><p>${t("load.error.text")}</p><p><code>npx serve .</code> · <code>python -m http.server</code></p></div>`;
+  container.innerHTML = `<div class="load-error" role="alert"><strong>${t("load.error.title")}</strong><p>${t("load.error.text")}</p></div>`;
 }
 
 /** Monta um bloco dinâmico e retira o estado de carregamento. */
@@ -82,6 +98,7 @@ async function initPage() {
     const items = galleryItems();
     const gallery = mount("[data-gallery]", (el) => renderGalleryGrid(el, items));
     if (gallery) {
+      initGalleryNav(gallery);
       const { initGallery } = await import("./gallery.js");
       initGallery(gallery, items);
     }
@@ -95,7 +112,7 @@ async function initPage() {
     if (root) { renderProductPage(root); root.removeAttribute("aria-busy"); }
   }
   await cartReady;
-  window.dispatchEvent(new CustomEvent("lorosae:ready"));
+  window.dispatchEvent(new CustomEvent("aquora:ready"));
 }
 
 injectLayout(document.body.dataset.nav || page);
@@ -106,7 +123,7 @@ initNewsletter();
 initAccordions();
 initToc();
 
-// Loader de aquário: só na home, uma vez por sessão (a classe é decidida por um script inline no <head>)
+// Cortina de entrada: só na home, uma vez por sessão (a classe é decidida por um script inline no <head>)
 const intro = document.documentElement.classList.contains("has-loader");
 const motion = initAnimations({ intro });
 if (intro) runLoader({ onExpand: motion.playHero });

@@ -1,6 +1,6 @@
-# IMAGE_GENERATION_BRIEF.md — LOROSAE BETTA®
+# IMAGE_GENERATION_BRIEF.md — AQUORA
 
-> **Estado atual:** já existem o hero e 10 produtos (principal e detalhe, exceto Aurora `-02`). **Faltam:** Lótus e Sombra (`-01` e `-02`, estão como rascunho em `data/products.json` com `published: false`), `lb-aurora-02`, as 6 imagens de variedades e as 3 editoriais (hoje reutilizam fotografias de produtos como solução **provisória**). Qualquer imagem em falta mostra uma **imagem temporária gerada em código**, rotulada "IMAGEM TEMPORÁRIA". Este documento é a lista completa e os prompts prontos a usar para as criar (ou para as encomendar a um fotógrafo).
+> **Estado atual:** já existem o hero e 10 produtos (principal e detalhe, exceto Aurora `-02`). **Faltam:** Lótus e Sombra (`-01` e `-02`, estão como rascunho em `data/products.json` com `published: false`), `aq-aurora-02`, as 6 imagens de variedades e as 3 editoriais (hoje reutilizam fotografias de produtos como solução **provisória**). Qualquer imagem em falta mostra uma **imagem temporária gerada em código**, rotulada "IMAGEM TEMPORÁRIA". Este documento é a lista completa e os prompts prontos a usar para as criar (ou para as encomendar a um fotógrafo).
 >
 > Ficheiro gerado a partir de `data/products.json` e `data/categories.json` — se mudar o stock, mantenha os nomes de ficheiro coerentes (ver convenção).
 
@@ -29,9 +29,9 @@
 
 | Tipo | Padrão | Exemplo |
 |---|---|---|
-| Hero | `hero/lb-hero-betta-NN` | `lb-hero-betta-01.jpg` |
-| Produto | `products/lb-<slug>-NN` (01 = principal, 02 = detalhe) | `lb-abissal-01.jpg` |
-| Variedade | `varieties/lb-variety-<id>` | `lb-variety-halfmoon.jpg` |
+| Hero | `hero/aq-hero-betta-NN` | `aq-hero-betta-01.jpg` |
+| Produto | `products/aq-<slug>-NN` (01 = principal, 02 = detalhe) | `aq-abissal-01.jpg` |
+| Variedade | `varieties/aq-variety-<id>` | `aq-variety-halfmoon.jpg` |
 | Editorial | `editorial/lb-editorial-<tema>-NN` | `lb-editorial-brand-01.jpg` |
 | Cuidados | `care/lb-care-<tema>-NN` | `lb-care-water-01.jpg` |
 
@@ -45,41 +45,41 @@ No text, no letters, no logos, no watermark, no signature, no human hands, no ot
 
 | # | Ficheiro | Prioridade/grupo |
 |---|---|---|
-| 1 | `assets/images/hero/lb-hero-betta-01.jpg` | 1 · Hero |
-| 2 | `assets/images/products/lb-abissal-01.jpg` | 2 · Produtos — fotografia principal |
-| 3 | `assets/images/products/lb-abissal-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 4 | `assets/images/products/lb-ambar-01.jpg` | 2 · Produtos — fotografia principal |
-| 5 | `assets/images/products/lb-ambar-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 6 | `assets/images/products/lb-mare-01.jpg` | 2 · Produtos — fotografia principal |
-| 7 | `assets/images/products/lb-mare-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 8 | `assets/images/products/lb-nevoa-01.jpg` | 2 · Produtos — fotografia principal |
-| 9 | `assets/images/products/lb-nevoa-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 10 | `assets/images/products/lb-cobre-01.jpg` | 2 · Produtos — fotografia principal |
-| 11 | `assets/images/products/lb-cobre-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 12 | `assets/images/products/lb-gemeo-01.jpg` | 2 · Produtos — fotografia principal |
-| 13 | `assets/images/products/lb-gemeo-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 14 | `assets/images/products/lb-eclipse-01.jpg` | 2 · Produtos — fotografia principal |
-| 15 | `assets/images/products/lb-eclipse-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 16 | `assets/images/products/lb-coral-01.jpg` | 2 · Produtos — fotografia principal |
-| 17 | `assets/images/products/lb-coral-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 18 | `assets/images/products/lb-jade-01.jpg` | 2 · Produtos — fotografia principal |
-| 19 | `assets/images/products/lb-jade-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 20 | `assets/images/products/lb-aurora-01.jpg` | 2 · Produtos — fotografia principal |
-| 21 | `assets/images/products/lb-aurora-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 22 | `assets/images/products/lb-lotus-01.jpg` | 2 · Produtos — fotografia principal |
-| 23 | `assets/images/products/lb-lotus-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 24 | `assets/images/products/lb-sombra-01.jpg` | 2 · Produtos — fotografia principal |
-| 25 | `assets/images/products/lb-sombra-02.jpg` | 2 · Produtos — detalhe (galeria) |
-| 26 | `assets/images/varieties/lb-variety-halfmoon.jpg` | 3 · Variedades (categorias) |
-| 27 | `assets/images/varieties/lb-variety-crowntail.jpg` | 3 · Variedades (categorias) |
-| 28 | `assets/images/varieties/lb-variety-plakat.jpg` | 3 · Variedades (categorias) |
-| 29 | `assets/images/varieties/lb-variety-dumbo-ear.jpg` | 3 · Variedades (categorias) |
-| 30 | `assets/images/varieties/lb-variety-veiltail.jpg` | 3 · Variedades (categorias) |
-| 31 | `assets/images/varieties/lb-variety-double-tail.jpg` | 3 · Variedades (categorias) |
+| 1 | `assets/images/hero/aq-hero-betta-01.jpg` | 1 · Hero |
+| 2 | `assets/images/products/aq-abissal-01.jpg` | 2 · Produtos — fotografia principal |
+| 3 | `assets/images/products/aq-abissal-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 4 | `assets/images/products/aq-ambar-01.jpg` | 2 · Produtos — fotografia principal |
+| 5 | `assets/images/products/aq-ambar-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 6 | `assets/images/products/aq-mare-01.jpg` | 2 · Produtos — fotografia principal |
+| 7 | `assets/images/products/aq-mare-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 8 | `assets/images/products/aq-nevoa-01.jpg` | 2 · Produtos — fotografia principal |
+| 9 | `assets/images/products/aq-nevoa-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 10 | `assets/images/products/aq-cobre-01.jpg` | 2 · Produtos — fotografia principal |
+| 11 | `assets/images/products/aq-cobre-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 12 | `assets/images/products/aq-gemeo-01.jpg` | 2 · Produtos — fotografia principal |
+| 13 | `assets/images/products/aq-gemeo-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 14 | `assets/images/products/aq-eclipse-01.jpg` | 2 · Produtos — fotografia principal |
+| 15 | `assets/images/products/aq-eclipse-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 16 | `assets/images/products/aq-coral-01.jpg` | 2 · Produtos — fotografia principal |
+| 17 | `assets/images/products/aq-coral-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 18 | `assets/images/products/aq-jade-01.jpg` | 2 · Produtos — fotografia principal |
+| 19 | `assets/images/products/aq-jade-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 20 | `assets/images/products/aq-aurora-01.jpg` | 2 · Produtos — fotografia principal |
+| 21 | `assets/images/products/aq-aurora-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 22 | `assets/images/products/aq-lotus-01.jpg` | 2 · Produtos — fotografia principal |
+| 23 | `assets/images/products/aq-lotus-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 24 | `assets/images/products/aq-sombra-01.jpg` | 2 · Produtos — fotografia principal |
+| 25 | `assets/images/products/aq-sombra-02.jpg` | 2 · Produtos — detalhe (galeria) |
+| 26 | `assets/images/varieties/aq-variety-halfmoon.jpg` | 3 · Variedades (categorias) |
+| 27 | `assets/images/varieties/aq-variety-crowntail.jpg` | 3 · Variedades (categorias) |
+| 28 | `assets/images/varieties/aq-variety-plakat.jpg` | 3 · Variedades (categorias) |
+| 29 | `assets/images/varieties/aq-variety-dumbo-ear.jpg` | 3 · Variedades (categorias) |
+| 30 | `assets/images/varieties/aq-variety-veiltail.jpg` | 3 · Variedades (categorias) |
+| 31 | `assets/images/varieties/aq-variety-double-tail.jpg` | 3 · Variedades (categorias) |
 | 32 | `assets/images/editorial/lb-editorial-brand-01.jpg` | 4 · Editorial |
 | 33 | `assets/images/editorial/lb-editorial-experience-01.jpg` | 4 · Editorial |
 | 34 | `assets/images/editorial/lb-editorial-cta-01.jpg` | 4 · Editorial |
-| 35 | `assets/images/og-lorosae-betta.jpg` | 4 · Editorial |
+| 35 | `assets/images/og-aquora.jpg` | 4 · Editorial |
 | 36 | `assets/images/care/lb-care-aquarium-01.jpg` | 5 · Cuidados (RESERVADO — ainda não usado nos modelos) |
 | 37 | `assets/images/care/lb-care-water-01.jpg` | 5 · Cuidados (RESERVADO — ainda não usado nos modelos) |
 | 38 | `assets/images/care/lb-care-acclimatisation-01.jpg` | 5 · Cuidados (RESERVADO — ainda não usado nos modelos) |
@@ -88,7 +88,7 @@ No text, no letters, no logos, no watermark, no signature, no human hands, no ot
 
 ## 1 · Hero
 
-### `assets/images/hero/lb-hero-betta-01.jpg`
+### `assets/images/hero/aq-hero-betta-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -110,7 +110,7 @@ Cinematic hero photograph of a single exceptional Betta fish swimming in a dark 
 
 ## 2 · Produtos — fotografia principal
 
-### `assets/images/products/lb-abissal-01.jpg`
+### `assets/images/products/aq-abissal-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -130,7 +130,7 @@ Cinematic hero photograph of a single exceptional Betta fish swimming in a dark 
 Studio-quality macro photograph of one Halfmoon Betta fish, royal-blue body and fins with metallic blue highlights and a dark shadow near the base of the tail, tail fully opened in a wide D shape. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: serene, deep, cold blue light. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-ambar-01.jpg`
+### `assets/images/products/aq-ambar-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -150,7 +150,7 @@ Studio-quality macro photograph of one Halfmoon Betta fish, royal-blue body and 
 Studio-quality macro photograph of one Crowntail Betta fish, warm copper body with red fin rays that extend past the membrane into pointed, serrated tips fading to pale amber. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: warm, glowing like light through amber. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-mare-01.jpg`
+### `assets/images/products/aq-mare-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -170,7 +170,7 @@ Studio-quality macro photograph of one Crowntail Betta fish, warm copper body wi
 Studio-quality macro photograph of one Plakat Betta fish, short-finned compact turquoise fish whose scales shift between blue and green under the light, clean athletic silhouette. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: fresh, luminous, teal-forward. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-nevoa-01.jpg`
+### `assets/images/products/aq-nevoa-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -190,7 +190,7 @@ Studio-quality macro photograph of one Plakat Betta fish, short-finned compact t
 Studio-quality macro photograph of one Dumbo Ear Betta fish, pearl-white body with large translucent pectoral fins edged in blue-grey, fins spread like wings. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: airy, soft, misty. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-cobre-01.jpg`
+### `assets/images/products/aq-cobre-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -210,7 +210,7 @@ Studio-quality macro photograph of one Dumbo Ear Betta fish, pearl-white body wi
 Studio-quality macro photograph of one Veiltail Betta fish, uniform warm copper-orange body with a long drooping veil tail falling in soft folds. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: warm, calm, slow movement. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-gemeo-01.jpg`
+### `assets/images/products/aq-gemeo-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -230,7 +230,7 @@ Studio-quality macro photograph of one Veiltail Betta fish, uniform warm copper-
 Studio-quality macro photograph of one Double Tail Betta fish, saturated red body with white tips, tail split into two symmetrical lobes with a wide dorsal fin. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: graphic, bold, high contrast red and white. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-eclipse-01.jpg`
+### `assets/images/products/aq-eclipse-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -250,7 +250,7 @@ Studio-quality macro photograph of one Double Tail Betta fish, saturated red bod
 Studio-quality macro photograph of one Halfmoon Betta fish, deep black body with a fine golden halo tracing the edge of every fin, like a solar eclipse corona. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: dramatic, low-key, gold edge light. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-coral-01.jpg`
+### `assets/images/products/aq-coral-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -270,7 +270,7 @@ Studio-quality macro photograph of one Halfmoon Betta fish, deep black body with
 Studio-quality macro photograph of one Crowntail Betta fish, coral-red fins with steel-blue stripes near the body and sharply defined serrated fin rays. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: vivid but natural, warm coral against cool blue. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-jade-01.jpg`
+### `assets/images/products/aq-jade-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -290,7 +290,7 @@ Studio-quality macro photograph of one Crowntail Betta fish, coral-red fins with
 Studio-quality macro photograph of one Plakat Betta fish, metallic emerald-green body with the brightest shimmer along the back, short fins fading in colour. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: deep green, jewel-like. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-aurora-01.jpg`
+### `assets/images/products/aq-aurora-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -310,7 +310,7 @@ Studio-quality macro photograph of one Plakat Betta fish, metallic emerald-green
 Studio-quality macro photograph of one Dumbo Ear Betta fish, pale pink body with a gradient to violet through the large pectoral and tail fins. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: delicate, dawn-light, pastel but not washed out. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-lotus-01.jpg`
+### `assets/images/products/aq-lotus-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -330,7 +330,7 @@ Studio-quality macro photograph of one Dumbo Ear Betta fish, pale pink body with
 Studio-quality macro photograph of one Veiltail Betta fish, soft white body and long drooping tail tinted light blue at the tips. Three-quarter side view, whole fish visible, fins gently flowing, swimming in a dark aquarium. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: calm, clean, white against black. Portrait 4:5 composition with generous headroom. This must be a unique individual fish, not a generic Betta. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-sombra-01.jpg`
+### `assets/images/products/aq-sombra-01.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -352,7 +352,7 @@ Studio-quality macro photograph of one Double Tail Betta fish, almost monochrome
 
 ## 2 · Produtos — detalhe (galeria)
 
-### `assets/images/products/lb-abissal-02.jpg`
+### `assets/images/products/aq-abissal-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -372,7 +372,7 @@ Studio-quality macro photograph of one Double Tail Betta fish, almost monochrome
 Extreme macro close-up of the royal-blue body and fins with metallic blue highlights and a dark shadow near the base of the tail of a Halfmoon Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: serene, deep, cold blue light. Portrait 4:5. The colours must match the fish in the main photo (Azul real, Preto). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-ambar-02.jpg`
+### `assets/images/products/aq-ambar-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -392,7 +392,7 @@ Extreme macro close-up of the royal-blue body and fins with metallic blue highli
 Extreme macro close-up of the warm copper body with red fin rays that extend past the membrane into pointed of a Crowntail Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: warm, glowing like light through amber. Portrait 4:5. The colours must match the fish in the main photo (Cobre, Vermelho). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-mare-02.jpg`
+### `assets/images/products/aq-mare-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -412,7 +412,7 @@ Extreme macro close-up of the warm copper body with red fin rays that extend pas
 Extreme macro close-up of the short-finned compact turquoise fish whose scales shift between blue and green under the light of a Plakat Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: fresh, luminous, teal-forward. Portrait 4:5. The colours must match the fish in the main photo (Azul-turquesa). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-nevoa-02.jpg`
+### `assets/images/products/aq-nevoa-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -432,7 +432,7 @@ Extreme macro close-up of the short-finned compact turquoise fish whose scales s
 Extreme macro close-up of the pearl-white body with large translucent pectoral fins edged in blue-grey of a Dumbo Ear Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: airy, soft, misty. Portrait 4:5. The colours must match the fish in the main photo (Branco pérola, Azul-acinzentado). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-cobre-02.jpg`
+### `assets/images/products/aq-cobre-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -452,7 +452,7 @@ Extreme macro close-up of the pearl-white body with large translucent pectoral f
 Extreme macro close-up of the uniform warm copper-orange body with a long drooping veil tail falling in soft folds of a Veiltail Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: warm, calm, slow movement. Portrait 4:5. The colours must match the fish in the main photo (Laranja cobre). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-gemeo-02.jpg`
+### `assets/images/products/aq-gemeo-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -472,7 +472,7 @@ Extreme macro close-up of the uniform warm copper-orange body with a long droopi
 Extreme macro close-up of the saturated red body with white tips of a Double Tail Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: graphic, bold, high contrast red and white. Portrait 4:5. The colours must match the fish in the main photo (Vermelho, Branco). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-eclipse-02.jpg`
+### `assets/images/products/aq-eclipse-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -492,7 +492,7 @@ Extreme macro close-up of the saturated red body with white tips of a Double Tai
 Extreme macro close-up of the deep black body with a fine golden halo tracing the edge of every fin of a Halfmoon Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: dramatic, low-key, gold edge light. Portrait 4:5. The colours must match the fish in the main photo (Preto, Dourado). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-coral-02.jpg`
+### `assets/images/products/aq-coral-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -512,7 +512,7 @@ Extreme macro close-up of the deep black body with a fine golden halo tracing th
 Extreme macro close-up of the coral-red fins with steel-blue stripes near the body and sharply defined serrated fin rays of a Crowntail Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: vivid but natural, warm coral against cool blue. Portrait 4:5. The colours must match the fish in the main photo (Vermelho coral, Azul). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-jade-02.jpg`
+### `assets/images/products/aq-jade-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -532,7 +532,7 @@ Extreme macro close-up of the coral-red fins with steel-blue stripes near the bo
 Extreme macro close-up of the metallic emerald-green body with the brightest shimmer along the back of a Plakat Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: deep green, jewel-like. Portrait 4:5. The colours must match the fish in the main photo (Verde esmeralda). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-aurora-02.jpg`
+### `assets/images/products/aq-aurora-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -552,7 +552,7 @@ Extreme macro close-up of the metallic emerald-green body with the brightest shi
 Extreme macro close-up of the pale pink body with a gradient to violet through the large pectoral and tail fins of a Dumbo Ear Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: delicate, dawn-light, pastel but not washed out. Portrait 4:5. The colours must match the fish in the main photo (Rosa pálido, Violeta). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-lotus-02.jpg`
+### `assets/images/products/aq-lotus-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -572,7 +572,7 @@ Extreme macro close-up of the pale pink body with a gradient to violet through t
 Extreme macro close-up of the soft white body and long drooping tail tinted light blue at the tips of a Veiltail Betta: fine scale texture, translucent fin rays with light passing through, razor-thin depth of field. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Mood: calm, clean, white against black. Portrait 4:5. The colours must match the fish in the main photo (Branco, Azul claro). No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/products/lb-sombra-02.jpg`
+### `assets/images/products/aq-sombra-02.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -594,7 +594,7 @@ Extreme macro close-up of the almost monochrome deep black fish with midnight-bl
 
 ## 3 · Variedades (categorias)
 
-### `assets/images/varieties/lb-variety-halfmoon.jpg`
+### `assets/images/varieties/aq-variety-halfmoon.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -614,7 +614,7 @@ Extreme macro close-up of the almost monochrome deep black fish with midnight-bl
 Elegant editorial photograph of a Halfmoon Betta, tail opened in a wide D shape reaching close to 180 degrees, whole fish visible in side view, swimming in dark water. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Colour accent around #2b6cb0. Portrait 3:4, centred composition that clearly shows the characteristic silhouette of the variety. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/varieties/lb-variety-crowntail.jpg`
+### `assets/images/varieties/aq-variety-crowntail.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -634,7 +634,7 @@ Elegant editorial photograph of a Halfmoon Betta, tail opened in a wide D shape 
 Elegant editorial photograph of a Crowntail Betta, fin rays extending past the membrane forming a serrated crown-like edge, whole fish visible in side view, swimming in dark water. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Colour accent around #c0492f. Portrait 3:4, centred composition that clearly shows the characteristic silhouette of the variety. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/varieties/lb-variety-plakat.jpg`
+### `assets/images/varieties/aq-variety-plakat.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -654,7 +654,7 @@ Elegant editorial photograph of a Crowntail Betta, fin rays extending past the m
 Elegant editorial photograph of a Plakat Betta, short fins, compact athletic body, clean silhouette, whole fish visible in side view, swimming in dark water. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Colour accent around #2a9d8f. Portrait 3:4, centred composition that clearly shows the characteristic silhouette of the variety. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/varieties/lb-variety-dumbo-ear.jpg`
+### `assets/images/varieties/aq-variety-dumbo-ear.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -674,7 +674,7 @@ Elegant editorial photograph of a Plakat Betta, short fins, compact athletic bod
 Elegant editorial photograph of a Dumbo Ear Betta, very large pectoral fins held out like wings, whole fish visible in side view, swimming in dark water. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Colour accent around #8f9fe0. Portrait 3:4, centred composition that clearly shows the characteristic silhouette of the variety. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/varieties/lb-variety-veiltail.jpg`
+### `assets/images/varieties/aq-variety-veiltail.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -694,7 +694,7 @@ Elegant editorial photograph of a Dumbo Ear Betta, very large pectoral fins held
 Elegant editorial photograph of a Veiltail Betta, long drooping veil-like tail, whole fish visible in side view, swimming in dark water. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. Photorealistic premium editorial aquatic photography, macro lens look (100 mm), shallow depth of field with the eye and nearest scales tack-sharp, a single soft key light from the upper left producing controlled specular highlights, faint caustic light ripples, a few tiny suspended particles for depth, rich believable colour with restrained saturation, natural water reflections. Colour accent around #d98b4f. Portrait 3:4, centred composition that clearly shows the characteristic silhouette of the variety. No text, no letters, no logos, no watermark, no signature, no human hands, no other fish, no aquarium decorations, no cartoon or 3D-render look, no CGI gloss, no oversaturated neon colours, no extra or distorted fins.
 ```
 
-### `assets/images/varieties/lb-variety-double-tail.jpg`
+### `assets/images/varieties/aq-variety-double-tail.jpg`
 
 | Campo | Valor |
 |---|---|
@@ -740,7 +740,7 @@ Abstract macro photograph of Betta fish scales and the translucent edge of a fin
 
 | Campo | Valor |
 |---|---|
-| **Onde aparece** | Home — secção D (A experiência LOROSAE) |
+| **Onde aparece** | Home — secção D (A experiência AQUORA) |
 | **Assunto** | A copper-orange Betta side-lit, calm and sculptural, with part of the fin lost in shadow. |
 | **Composição** | Fish in the lower two-thirds, upper third dark; sticky image on desktop (3:4 crop). |
 | **Fundo** | Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. |
@@ -776,13 +776,13 @@ Low-key editorial photograph of a copper-orange Betta fish lit from one side, ha
 Atmospheric underwater photograph, deep teal-black water with soft light shafts and faint caustic ripples from above, a barely visible silhouette of a Betta fin dissolving at one corner, large calm dark centre. Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. No text, no logos, no watermark, no sharp subject in the centre. 16:10.
 ```
 
-### `assets/images/og-lorosae-betta.jpg`
+### `assets/images/og-aquora.jpg`
 
 | Campo | Valor |
 |---|---|
 | **Onde aparece** | Metadados Open Graph (partilha em redes sociais) |
 | **Assunto** | Hero crop of the brand: fish on the right, dark empty left side. |
-| **Composição** | Derived from lb-hero-betta-01.jpg; fish within the central 60 %. |
+| **Composição** | Derived from aq-hero-betta-01.jpg; fish within the central 60 %. |
 | **Fundo** | Deep near-black teal aquatic background (#071114 fading to #0B2027), smooth falloff, no visible tank walls. |
 | **Iluminação** | Same as hero. |
 | **Paleta** | Brand palette |
@@ -793,7 +793,7 @@ Atmospheric underwater photograph, deep teal-black water with soft light shafts 
 **Prompt (copiar e colar):**
 
 ```text
-No new generation needed: crop and export from lb-hero-betta-01.jpg at 1200 × 630.
+No new generation needed: crop and export from aq-hero-betta-01.jpg at 1200 × 630.
 ```
 
 ## 5 · Cuidados (RESERVADO — ainda não usado nos modelos)
