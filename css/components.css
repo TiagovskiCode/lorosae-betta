@@ -80,7 +80,7 @@
 .product-card__colors { font-size: var(--fs-sm); color: var(--color-mist); }
 .product-card__foot {
   display: flex; align-items: center; justify-content: space-between; gap: 0.75rem 1rem; flex-wrap: wrap;
-  margin-top: 0.65rem; padding-top: 0.85rem; border-top: 1px solid var(--line);
+  margin-top: 0.65rem; padding-top: 0.85rem; border-top: 1px solid var(--line); min-height: 4.25rem;
 }
 .product-card__price { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; font-variant-numeric: lining-nums; }
 .product-card__actions { display: flex; align-items: center; gap: 1rem; }
