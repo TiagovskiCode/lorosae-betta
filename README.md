@@ -4,26 +4,26 @@ Loja conceptual de peixes Betta, desenhada e desenvolvida como projeto de portf�
 
 ## Direção criativa
 
-- **Editorial aquático.** Fundos teal quase negros, fotografia em grande escala e muito espaço negativo. Cada secção da home usa uma composição diferente (hero em ecrã inteiro, manifesto tipográfico, grelha assimétrica, destaque sobre superfície, índice de variedades com pré-visualização, banda de imagem, faixa horizontal de detalhes, lista de cuidados, CTA tipográfico, contacto).
-- **Paleta:** `#071114` ink · `#0b1b1f` abyss · `#10252a` surface · `#1a4650` azul aquático · `#d7b77a` ouro (único acento) · `#e8e5dc` marfim · `#a6ada8` / `#808b88` texto secundário. Todos os pares de texto cumprem WCAG AA.
-- **Tipografia:** Cormorant Garamond (títulos, preços, números) + Manrope (texto e interface), ambas auto-alojadas. Escala fluida com `clamp()`.
-- **Forma:** cantos quase retos, divisores finos em vez de cartões com caixa, sem glassmorphism nem sombras decorativas.
-- **Identidade:** wordmark tipográfico "AQUORA" com espaçamento largo e monograma "A" em ouro para o favicon (`assets/icons/favicon.svg`).
-- **Movimento:** cortina de entrada de ~1,8 s (uma vez por sessão), entrada do hero por linhas, revelações por scroll, parallax contido só em desktop. Tudo desativado com `prefers-reduced-motion`.
+- **Boutique aquática, clara e arredondada.** Superfícies brancas e pérola onde as fotografias (escuras, subaquáticas) ganham destaque; azul-marinho só no rodapé e em painéis de destaque.
+- **Paleta inspirada no Aurora Betta:** Ocean Blue `#173F91` (marca, CTA, ligações) · Ice Blue `#78B8ED` (detalhes, hovers) · Pearl White `#EAF4FF` e Pure White `#FFFFFF` (fundos e cartões) · Aurora Pink `#EF8CBF` (acento: selos, ponto da marca, estados, um CTA por secção) · Midnight Navy `#172B48` (texto, rodapé). Tokens em `css/main.css`; `.on-dark` inverte-os nas superfícies escuras. Todos os pares de texto cumprem WCAG AA (o rosa nunca é usado como cor de texto sobre branco).
+- **Sistema de raios:** 10 px (etiquetas) · 14 px (campos) · 18 px (controlos) · 22 px (cartões de produto) · 28 px (imagens grandes) · 34 px (painéis de destaque) · pill (botões, chips, selos).
+- **Tipografia:** Cormorant Garamond (títulos, preços) + Manrope (interface e texto), auto-alojadas; escala fluida com `clamp()`; texto em frase, sem excesso de maiúsculas.
+- **Movimento:** cortina de entrada de ~1,8 s (uma vez por sessão), entrada do hero, revelações por scroll, elevação suave nos cartões. Tudo desativado com `prefers-reduced-motion`.
 
 ## Páginas
 
 | Página | Ficheiro | Conteúdo |
 |---|---|---|
-| Início | `index.html` | Hero, manifesto, coleção em destaque, peixe em destaque, variedades, filosofia, galeria + lightbox, cuidados, CTA, contacto |
-| Coleção | `pages/shop.html` | Filtro por variedade, pesquisa, disponibilidade, ordenação; estado no URL (`?q=&variedade=&disp=&ordem=`) |
-| Ficha | `pages/product.html?produto=<slug>` | Galeria (empilhada em desktop, carrossel no telemóvel), ficha técnica, descrição, nota sobre a variedade, cuidados, relacionados |
+| Início | `index.html` | Hero, destaques da marca, coleção em destaque, variedades (cartões com fotografia), peixe em destaque, porquê a AQUORA, galeria + lightbox, guia de cuidados, CTA, contacto |
+| Coleção | `pages/shop.html` | Filtro por variedade, pesquisa, disponibilidade, ordenação (preço ↑↓, nome A–Z/Z–A); estado no URL (`?q=&variedade=&disp=&ordem=`) |
+| Ficha | `pages/product.html?produto=<slug>` | Galeria com lightbox (empilhada em desktop, carrossel no telemóvel), ficha técnica, descrição, nota sobre a variedade, cuidados, relacionados |
 | Carrinho | `pages/cart.html` | Linhas, quantidades limitadas ao stock, resumo e pedido de reserva |
 | Sobre | `pages/about.html` | Filosofia, compromissos, responsabilidade |
 | Cuidados | `pages/care-guide.html` | Guia completo, FAQ, compra e envios, privacidade |
 
 ## Funcionalidade
 
+- **Pesquisa no cabeçalho:** painel com sugestões em direto (nome, cor, variedade); Enter abre a coleção já filtrada (`?q=`).
 - **Carrinho** em `localStorage` (`aquora.cart.v1`), gaveta lateral com trap de foco e Esc, sincronização entre separadores.
 - **Pedido de reserva:** o site não processa pagamentos. Sem back-end, o pedido é preparado no navegador e apresentado ao cliente; com `CONFIG.orderEndpoint` é enviado por POST; com `CONFIG.contact.email` abre o email do cliente.
 - **Contacto:** validação completa; só mostra sucesso se `CONFIG.contactEndpoint` responder OK (ex.: Formspree). Sem serviço configurado, informa que a mensagem não foi enviada.
@@ -73,4 +73,4 @@ As imagens seguem o padrão `assets/images/products/aq-<slug>-01.jpg` (+ `-01.we
 
 ## Nota
 
-Projeto conceptual. A marca, os produtos e os preços são fictícios; as fotografias são imagens geradas para o conceito (ver `IMAGE_GENERATION_BRIEF.md`). A indexação por motores de busca está desativada em `robots.txt`.
+Projeto conceptual. A marca, os produtos e os preços são fictícios; as fotografias são imagens geradas para o conceito (ver `IMAGE_GENERATION_BRIEF.md`). `robots.txt` permite a indexação (exceto o carrinho) e `sitemap.xml` lista as páginas e as fichas.

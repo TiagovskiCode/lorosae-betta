@@ -65,43 +65,21 @@ export function splitWords(el, { mask = true } = {}) {
 function initHero(intro) {
   const hero = $("[data-hero]");
   if (!hero) return null;
+  const media = $(".hero__media", hero);
   const img = $(".hero__img", hero);
   const lines = $$(".hero__title .line__inner", hero);
   const q = (name) => $$(`[data-hero-fade="${name}"]`, hero);
 
   const tl = gsap.timeline({ defaults: { ease: "power3.out" }, paused: intro, delay: intro ? 0 : 0.15 });
-  tl.fromTo(img, { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 2.4, ease: "power2.out" }, 0)
+  tl.fromTo(media, { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 1.2 }, 0.1)
+    .fromTo(img, { scale: 1.08 }, { scale: 1, duration: 2.4, ease: "power2.out" }, 0.1)
     .fromTo(q("eyebrow"), { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.8 }, 0.35)
     .fromTo(lines, { yPercent: 110, autoAlpha: 1 }, { yPercent: 0, duration: 1.2, stagger: 0.12, ease: "power4.out" }, 0.45)
     .fromTo(q("lead"), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.9 }, 0.95)
     .fromTo(q("cta"), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 }, 1.1)
-    .fromTo(q("foot"), { autoAlpha: 0 }, { autoAlpha: 1, duration: 1 }, 1.35);
-
-  const cue = $(".hero__scroll-line i", hero);
-  if (cue) tl.fromTo(cue, { yPercent: -100 }, { yPercent: 100, duration: 1.8, ease: "power2.inOut", repeat: -1, repeatDelay: 0.8 }, 1.8);
+    .fromTo(q("points"), { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.8 }, 1.3);
 
   return { tl, play: () => tl.play() };
-}
-
-/* ---------- Cabeçalho: esconde ao descer, mostra ao subir ---------- */
-function initHeader() {
-  const header = $(".site-header");
-  if (!header || !hasST()) return;
-  let hidden = false;
-  const set = (hide) => {
-    if (hide === hidden) return;
-    hidden = hide;
-    gsap.to(header, { yPercent: hide ? -100 : 0, duration: 0.5, ease: "power3.out", overwrite: "auto" });
-  };
-  ScrollTrigger.create({
-    start: 0, end: "max",
-    onUpdate: (self) => {
-      const locked = document.body.classList.contains("is-locked");
-      set(!locked && self.direction === 1 && self.scroll() > 600);
-      if (self.direction === -1 || self.scroll() < 600) set(false);
-    }
-  });
-  header.addEventListener("focusin", () => set(false));
 }
 
 /* ==========================================================================
@@ -194,8 +172,6 @@ export function refreshScroll() {
 /* ---------- Parallax contido (apenas desktop) ---------- */
 function initParallax() {
   if (!hasST()) return;
-  const hero = $("[data-hero]");
-  if (hero) gsap.to($(".hero__media", hero), { yPercent: 12, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
   $$("[data-parallax]").forEach((frame) => {
     const im = frame.querySelector("img");
     if (im) gsap.fromTo(im, { yPercent: -5 }, { yPercent: 5, ease: "none", scrollTrigger: { trigger: frame, start: "top bottom", end: "bottom top", scrub: true } });
@@ -321,7 +297,6 @@ export function initAnimations({ intro = false } = {}) {
 
   initSmoothScroll();
   const hero = initHero(intro);
-  initHeader();
   bindReveals(document);
 
   const mm = gsap.matchMedia();

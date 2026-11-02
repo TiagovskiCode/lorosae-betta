@@ -1,9 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- AQUORA — monograma "A" de traço fino, ouro sobre teal profundo -->
-  <rect width="64" height="64" fill="#071114"/>
-  <g fill="none" stroke="#d7b77a" stroke-linecap="square">
-    <path d="M17 50 32 13l15 37" stroke-width="2.6"/>
-    <path d="M22.5 37h19" stroke-width="1.8"/>
-    <path d="M12.5 50h9M42.5 50h9" stroke-width="1.8"/>
-  </g>
+  <!-- AQUORA — monograma "A" branco sobre azul-oceano, com ponto rosa-aurora -->
+  <rect width="64" height="64" rx="16" fill="#173f91"/>
+  <path d="M17 48 32 14l15 34" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M23 37h18" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="49" cy="49" r="5" fill="#ef8cbf"/>
 </svg>

@@ -49,7 +49,8 @@ export function initGallery(grid, items) {
     hydrateImages(wrap);
     if (instant) { imgBox.innerHTML = ""; imgBox.appendChild(next); } else crossfade(imgBox, next);
     titleEl.textContent = it.title;
-    linkEl.href = it.href;
+    linkEl.hidden = !it.href; // sem ligação (ficha de produto) o botão "Ver ficha" não aparece
+    if (it.href) linkEl.href = it.href;
     countEl.textContent = `${index + 1} / ${items.length}`;
     // pré-carrega as vizinhas
     [index - 1, index + 1].forEach((n) => { const x = items[(n + items.length) % items.length]; const w = document.createElement("div"); w.innerHTML = imgHtml({ path: x.src, alt: "", kind: "product", tint: x.tint }); hydrateImages(w); });

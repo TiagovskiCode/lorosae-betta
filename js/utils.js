@@ -34,10 +34,18 @@ export const CONFIG = {
 
 /* ---------- TEXTOS (pt-PT) — preparados para tradução ---------- */
 export const STRINGS = {
+  "nav.home": "Início",
   "nav.shop": "Coleção",
   "nav.varieties": "Variedades",
   "nav.about": "Sobre",
-  "nav.care": "Cuidados",
+  "nav.care": "Guia de cuidados",
+  "search.open": "Abrir pesquisa",
+  "search.close": "Fechar pesquisa",
+  "search.label": "Pesquisar na coleção",
+  "search.placeholder": "Procure por nome, cor ou variedade",
+  "search.submit": "Pesquisar",
+  "search.hint": "Experimente “Abissal”, “crowntail” ou “azul”.",
+  "search.none": "Nenhum peixe corresponde à pesquisa. Carregue em Pesquisar para ver a coleção completa.",
   "nav.contact": "Contacto",
   "nav.menu": "Menu",
   "nav.openMenu": "Abrir menu",
@@ -83,6 +91,7 @@ export const STRINGS = {
   "product.notFound.text": "Este exemplar já não está na coleção ou o endereço está incorreto.",
   "shop.count": "{shown} de {total} exemplares",
   "shop.count.one": "1 de {total} exemplares",
+  "shop.count.none": "0 de {total} exemplares",
   "shop.empty.title": "Nenhum peixe encontrado",
   "shop.empty.text": "Não encontrámos resultados para a sua pesquisa ou filtros. Experimente outros termos ou limpe os filtros.",
   "shop.clear": "Limpar filtros",

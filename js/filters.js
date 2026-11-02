@@ -18,7 +18,8 @@ const SORT = [
   ["featured", "Destaque"],
   ["price-asc", "Preço: do mais baixo ao mais alto"],
   ["price-desc", "Preço: do mais alto ao mais baixo"],
-  ["name", "Nome (A–Z)"]
+  ["name", "Nome (A–Z)"],
+  ["name-desc", "Nome (Z–A)"]
 ];
 const PARAMS = { q: "q", variety: "variedade", avail: "disp", sort: "ordem" };
 
@@ -71,7 +72,8 @@ export function initShop(root) {
     featured: (a, b) => Number(b.featured) - Number(a.featured) || Number(isBuyable(b)) - Number(isBuyable(a)) || order.get(a.id) - order.get(b.id),
     "price-asc": (a, b) => a.price - b.price || order.get(a.id) - order.get(b.id),
     "price-desc": (a, b) => b.price - a.price || order.get(a.id) - order.get(b.id),
-    name: (a, b) => a.name.localeCompare(b.name, "pt-PT")
+    name: (a, b) => a.name.localeCompare(b.name, "pt-PT"),
+    "name-desc": (a, b) => b.name.localeCompare(a.name, "pt-PT")
   };
 
   const isFiltered = () => state.q.trim() !== "" || state.variety !== "all" || state.avail !== "all";
@@ -102,7 +104,7 @@ export function initShop(root) {
     syncUrl();
 
     releaseReveals(els.grid);
-    els.grid.innerHTML = list.map((p) => productCardHtml(p, { layout: "std", reveal: false })).join("");
+    els.grid.innerHTML = list.map((p) => productCardHtml(p, { reveal: false })).join("");
     hydrateImages(els.grid);
     els.grid.hidden = list.length === 0;
     els.empty.hidden = list.length !== 0;

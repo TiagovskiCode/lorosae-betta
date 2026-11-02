@@ -5,7 +5,7 @@
    Cada página declara <body data-page="home|shop|product|cart|about|care">.
    ========================================================================== */
 import { t, $, $$, hydrateImages, prefersReducedMotion, hasGsap } from "./utils.js";
-import { injectLayout, initHeaderState, initMenu, initNewsletter } from "./layout.js";
+import { injectLayout, initHeaderState, initMenu, initSearch, initNewsletter } from "./layout.js";
 import { loadCatalogue, renderFeatured, renderVarieties, renderProductPage, renderSpotlight, renderGalleryGrid, galleryItems } from "./products.js";
 import { initCart } from "./cart.js";
 import { initAnimations, bindDynamic } from "./animations.js";
@@ -119,6 +119,7 @@ injectLayout(document.body.dataset.nav || page);
 hydrateImages();
 initHeaderState();
 initMenu();
+initSearch();
 initNewsletter();
 initAccordions();
 initToc();

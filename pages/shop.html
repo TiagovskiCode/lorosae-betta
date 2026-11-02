@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Coleção — AQUORA</title>
   <meta name="description" content="A coleção AQUORA: pesquise e filtre peixes Betta por variedade, disponibilidade e preço. Cada exemplar é apresentado individualmente.">
-  <meta name="theme-color" content="#071114">
+  <meta name="theme-color" content="#0a1628">
   <link rel="canonical" href="https://tiagovskicode.github.io/lorosae-betta/pages/shop.html">
+  <meta property="og:url" content="https://tiagovskicode.github.io/lorosae-betta/pages/shop.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AQUORA">
   <meta property="og:locale" content="pt_PT">
@@ -15,7 +16,7 @@
   <meta property="og:image" content="https://tiagovskicode.github.io/lorosae-betta/assets/images/hero/aq-hero-betta-01.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <script>
     (function (d) {
@@ -50,13 +51,16 @@
       <div class="container">
         <form class="shop-toolbar" role="search" aria-label="Pesquisar e filtrar a coleção" data-shop-form>
           <div class="field">
-            <span class="label visually-hidden" id="chips-label">Variedade</span>
+            <span class="label" id="chips-label">Variedade e tipo de cauda</span>
             <div class="chips" role="group" aria-labelledby="chips-label" data-chips></div>
           </div>
           <div class="shop-toolbar__row">
             <div class="field field--grow">
-              <label for="shop-q">Pesquisar</label>
-              <input id="shop-q" class="input" type="search" name="q" placeholder="Nome, cor ou tipo de cauda" autocomplete="off">
+              <label for="shop-q">Pesquisar pelo nome</label>
+              <div class="search-field">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></svg>
+                <input id="shop-q" class="input" type="search" name="q" placeholder="Nome, cor ou variedade" autocomplete="off">
+              </div>
             </div>
             <div class="field">
               <label for="shop-avail">Disponibilidade</label>
@@ -78,12 +82,13 @@
         <div class="shop-grid" data-grid aria-busy="true"><p class="loading-state">A carregar a coleção…</p></div>
 
         <div class="empty-state" data-empty hidden>
+          <span class="empty-state__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></svg></span>
           <h2>Nenhum peixe encontrado</h2>
           <p>Não encontrámos resultados para a sua pesquisa ou filtros. Experimente outros termos ou limpe os filtros.</p>
           <button type="button" class="btn btn--primary" data-empty-clear><span>Limpar filtros</span></button>
         </div>
 
-        <p class="small muted" style="margin-top:4rem;max-width:60ch">Os peixes são animais vivos. A disponibilidade e o envio são confirmados antes de qualquer pagamento. <a class="inline-link" href="care-guide.html#compra">Como funciona a compra</a>.</p>
+        <p class="small muted" style="margin-top:3.5rem;max-width:60ch">Os peixes são animais vivos. A disponibilidade e o envio são confirmados antes de qualquer pagamento. <a class="inline-link" href="care-guide.html#compra">Como funciona a compra</a>.</p>
       </div>
     </section>
   </main>

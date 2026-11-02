@@ -1,6 +1,6 @@
 # robots.txt — AQUORA
-# Projeto conceptual: a indexação está desativada para não ser confundido com uma loja em funcionamento.
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /pages/cart.html
 
 Sitemap: https://tiagovskicode.github.io/lorosae-betta/sitemap.xml

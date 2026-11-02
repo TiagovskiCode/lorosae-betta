@@ -117,7 +117,8 @@ function lineHtml(l, { page = false } = {}) {
 </div>`;
 }
 
-const emptyHtml = () => `<div class="empty-state" style="border:0;padding:3.5rem 0">
+const emptyHtml = () => `<div class="empty-state" style="margin-block:1.25rem">
+  <span class="empty-state__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>
   <h3>${t("cart.empty.title")}</h3>
   <p>${t("cart.empty.text")}</p>
   <a class="btn btn--primary" href="${shopUrl()}"><span>${t("cart.empty.cta")}</span></a>

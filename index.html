@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>AQUORA — Betta selecionados, um a um</title>
-  <meta name="description" content="AQUORA apresenta peixes Betta selecionados individualmente: fotografia própria, ficha detalhada e guias de cuidados para os receber com responsabilidade.">
-  <meta name="theme-color" content="#071114">
+  <title>AQUORA — Peixes Betta selecionados, um a um</title>
+  <meta name="description" content="AQUORA é uma boutique de peixes Betta: exemplares apresentados individualmente, com fotografia própria, ficha detalhada e guias de cuidados para os receber bem.">
+  <meta name="theme-color" content="#0a1628">
   <link rel="canonical" href="https://tiagovskicode.github.io/lorosae-betta/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AQUORA">
@@ -18,8 +18,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <!-- Imagem do hero (LCP): começa a descarregar antes do JavaScript -->
-  <link rel="preload" as="image" type="image/webp" href="assets/images/hero/aq-hero-betta-01.webp" imagesrcset="assets/images/hero/aq-hero-betta-01-800.webp 800w, assets/images/hero/aq-hero-betta-01.webp 1600w" imagesizes="100vw" fetchpriority="high">
-  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" href="assets/images/hero/aq-hero-betta-01.webp" imagesrcset="assets/images/hero/aq-hero-betta-01-800.webp 800w, assets/images/hero/aq-hero-betta-01.webp 1600w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <script>
     (function (d) {
@@ -61,105 +61,104 @@
 
   <main id="main">
 
-    <!-- HERO -->
+    <!-- 1 · HERO -->
     <section class="hero" data-hero aria-labelledby="hero-title">
-      <div class="hero__media">
-        <img class="hero__img" data-img="assets/images/hero/aq-hero-betta-01.jpg" data-kind="hero" data-tint="#1a4650,#0b1a3a" alt="Betta Halfmoon azul de barbatanas longas a nadar em água escura, iluminado por raios de luz" width="1600" height="1000" fetchpriority="high">
-      </div>
-      <div class="hero__shade" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <p class="eyebrow hero__eyebrow" data-hero-fade="eyebrow">Betta selecionados · um a um</p>
-        <h1 class="hero__title" id="hero-title">
-          <span class="line"><span class="line__inner">O carácter</span></span>
-          <span class="line"><span class="line__inner">tem <em>cor.</em></span></span>
-        </h1>
-        <p class="lead hero__lead" data-hero-fade="lead">Peixes Betta escolhidos individualmente, fotografados um a um e apresentados com a informação de que precisa para os receber bem.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" data-hero-fade="cta" href="pages/shop.html"><span>Explorar a coleção</span><span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></a>
-          <a class="link-arrow" data-hero-fade="cta" href="pages/care-guide.html"><span>Guia de cuidados</span></a>
-        </div>
-      </div>
-      <div class="hero__foot" data-hero-fade="foot">
-        <div class="container hero__foot-inner">
-          <a class="hero__scroll" href="#marca"><span class="hero__scroll-line" aria-hidden="true"><i></i></span><span>Descobrir</span></a>
-          <span class="hero__meta" aria-hidden="true">Halfmoon · Crowntail · Dumbo Ear · Veiltail</span>
-          <a class="hero__feature" href="#destaque" data-hero-feature hidden><span>Em destaque</span><strong data-hero-feature-name></strong></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- MANIFESTO -->
-    <section class="section manifesto" id="marca" aria-labelledby="manifesto-title">
-      <div class="container">
-        <p class="eyebrow" data-reveal>A marca</p>
-        <h2 id="manifesto-title" class="visually-hidden">Cada Betta é um indivíduo</h2>
-        <p class="manifesto__statement" style="margin-top:2rem" data-words>Cada Betta tem as suas cores, as suas barbatanas e o seu carácter. Apresentamo-lo como aquilo que é: um indivíduo.</p>
-
-        <div class="grid-12 manifesto__grid">
-          <figure class="manifesto__media">
-            <div class="frame" data-mask data-parallax>
-              <img data-img="assets/images/products/aq-abissal-02.jpg" data-kind="editorial" data-tint="#1a4650,#0b1a3a" alt="Detalhe macro das escamas azuis e da cauda de um Betta Halfmoon" width="1120" height="1400" loading="lazy">
-            </div>
-            <figcaption class="manifesto__caption">Abissal · detalhe da cauda</figcaption>
-          </figure>
-          <div class="manifesto__text">
-            <p class="lead" data-reveal>A AQUORA nasce da admiração por um peixe pequeno de presença enorme, que muda de cor com a luz e de postura com o ambiente.</p>
-            <div class="principles" data-stagger>
-              <div class="principle"><span class="principle__n">i.</span><div><h3>Seleção</h3><p>Uma coleção curta, escolhida pela cor, pela forma das barbatanas e pelo equilíbrio do conjunto.</p></div></div>
-              <div class="principle"><span class="principle__n">ii.</span><div><h3>Individualidade</h3><p>Nenhum Betta é igual a outro. Cada exemplar tem a sua página, as suas fotografias e a sua descrição.</p></div></div>
-              <div class="principle"><span class="principle__n">iii.</span><div><h3>Clareza</h3><p>Variedade, cor, preço e disponibilidade à vista. O que ainda não está confirmado é assinalado como tal.</p></div></div>
-              <div class="principle"><span class="principle__n">iv.</span><div><h3>Cuidado</h3><p>Antes de qualquer escolha, a informação para preparar o aquário e receber o peixe com segurança.</p></div></div>
-            </div>
-            <div data-reveal><a class="link-arrow" href="pages/about.html"><span>Conhecer a AQUORA</span></a></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow" data-hero-fade="eyebrow">Boutique de peixes Betta</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span class="line__inner">O carácter</span></span>
+            <span class="line"><span class="line__inner">tem <em>cor.</em></span></span>
+          </h1>
+          <p class="lead hero__lead" data-hero-fade="lead">Peixes Betta escolhidos um a um, fotografados individualmente e apresentados com tudo o que precisa de saber para os receber bem.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" data-hero-fade="cta" href="pages/shop.html"><span>Explorar a coleção</span><span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></a>
+            <a class="btn" data-hero-fade="cta" href="#marca"><span>Descobrir a AQUORA</span></a>
           </div>
+          <ul class="hero__points" data-hero-fade="points">
+            <li>Cada peixe com ficha e fotografias próprias</li>
+            <li>Disponibilidade e envio confirmados antes de pagar</li>
+            <li>Guia de cuidados para os receber bem</li>
+          </ul>
+        </div>
+        <div class="hero__media">
+          <img class="hero__img" data-img="assets/images/hero/aq-hero-betta-01.jpg" data-kind="hero" data-tint="#1a4650,#0b1a3a" alt="Betta Halfmoon azul de barbatanas longas a nadar em água escura, iluminado por raios de luz" width="1600" height="1000" fetchpriority="high">
+          <a class="hero__feature" href="#destaque" data-hero-feature hidden><strong data-hero-feature-name></strong></a>
         </div>
       </div>
     </section>
 
-    <!-- COLEÇÃO EM DESTAQUE -->
-    <section class="section section--abyss" id="colecao" aria-labelledby="featured-title">
+    <!-- 2 · DESTAQUES DA MARCA -->
+    <section class="section" id="marca" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <p class="eyebrow" data-reveal>Porquê a AQUORA</p>
+          <h2 id="trust-title" data-split>Um Betta é um <em>indivíduo.</em></h2>
+          <p class="lead" data-reveal>Por isso apresentamos cada exemplar com tempo: fotografias próprias, informação clara e apoio antes de decidir.</p>
+        </div>
+        <ul class="trust list-reset" data-stagger>
+          <li class="trust__item"><span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.4 5 5.4.7-4 3.8 1 5.4-4.8-2.6-4.8 2.6 1-5.4-4-3.8 5.4-.7z"/></svg></span><h3>Seleção cuidada</h3><p>Uma coleção curta, escolhida pela cor e pela forma das barbatanas.</p></li>
+          <li class="trust__item"><span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><h3>Fotografia individual</h3><p>Cada Betta tem as suas imagens: o que vê é o peixe da ficha.</p></li>
+          <li class="trust__item"><span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c3.5 4.2 6 6.8 6 10a6 6 0 0 1-12 0c0-3.2 2.5-5.8 6-10z"/></svg></span><h3>Guias de cuidados</h3><p>Aquário, água, alimentação e chegada, explicados passo a passo.</p></li>
+          <li class="trust__item"><span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></span><h3>Contacto personalizado</h3><p>Pergunte antes de decidir. Envio e disponibilidade confirmados consigo.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 · COLEÇÃO EM DESTAQUE -->
+    <section class="section section--alt" id="colecao" aria-labelledby="featured-title">
       <div class="container">
         <div class="section-head section-head--split">
           <p class="eyebrow" data-reveal>A coleção</p>
           <h2 id="featured-title" data-split>Escolhidos <em>um a um</em></h2>
-          <p class="lead" data-reveal>Cada exemplar tem nome, fotografias e ficha próprios. A disponibilidade é indicada em cada um.</p>
+          <a class="link-arrow" href="pages/shop.html" data-reveal><span>Ver toda a coleção</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></a>
         </div>
-        <div class="featured__grid" data-featured aria-busy="true"><p class="loading-state">A carregar a coleção…</p></div>
+        <div class="shop-grid featured__grid" data-featured aria-busy="true"><p class="loading-state">A carregar a coleção…</p></div>
       </div>
     </section>
 
-    <!-- DESTAQUE (dados: product.spotlight em data/products.json) -->
-    <section class="section section--surface spotlight" id="destaque" aria-labelledby="spotlight-title">
-      <div class="container">
-        <div class="grid-12 spotlight__grid" data-spotlight aria-busy="true"><p class="loading-state">A carregar…</p></div>
-      </div>
-    </section>
-
-    <!-- VARIEDADES -->
+    <!-- 4 · VARIEDADES -->
     <section class="section" id="variedades" aria-labelledby="varieties-title">
       <div class="container">
         <div class="section-head section-head--split">
-          <p class="eyebrow" data-reveal>Variedades</p>
+          <p class="eyebrow" data-reveal>Variedades de Betta</p>
           <h2 id="varieties-title" data-split>Cada silhueta, <em>a sua forma</em></h2>
           <p class="lead" data-reveal>A cauda define a silhueta de um Betta. Escolha pela forma e veja os exemplares de cada variedade.</p>
         </div>
-        <div class="grid-12 varieties" data-varieties aria-busy="true">
-          <ul class="varieties__list list-reset" data-varieties-list><li class="loading-state">A carregar as variedades…</li></ul>
-          <div class="varieties__preview frame" data-varieties-preview aria-hidden="true"></div>
-          <p class="varieties__note" data-reveal>Mostramos apenas as variedades com exemplares na coleção.</p>
+        <ul class="variety-grid" data-varieties aria-busy="true"><li class="loading-state">A carregar as variedades…</li></ul>
+      </div>
+    </section>
+
+    <!-- 5 · PEIXE EM DESTAQUE (dados: product.spotlight em data/products.json) -->
+    <section class="section section--alt spotlight" id="destaque" aria-labelledby="spotlight-title">
+      <div class="container">
+        <div class="promo">
+          <div class="grid-12 spotlight__grid" data-spotlight aria-busy="true"><p class="loading-state">A carregar…</p></div>
         </div>
       </div>
     </section>
 
-    <!-- BANDA DE IMAGEM — filosofia -->
-    <section class="band" aria-labelledby="band-title">
-      <div class="band__media" data-parallax>
-        <img data-img="assets/images/products/aq-cobre-02.jpg" data-kind="wide" data-tint="#d98b4f,#2b1608" alt="" width="1120" height="1400" loading="lazy">
-      </div>
-      <div class="container band__content">
-        <p class="eyebrow" data-reveal>Filosofia</p>
-        <h2 class="band__quote" id="band-title" data-split>Um peixe pequeno, de <em>presença enorme.</em></h2>
-        <p class="band__text" data-reveal>Muda de cor com a luz e de postura com o ambiente. Por isso, cada Betta é fotografado e descrito individualmente: cada fotografia corresponde ao peixe da sua ficha.</p>
+    <!-- 6 · PORQUÊ A AQUORA -->
+    <section class="section on-light" aria-labelledby="why-title">
+      <div class="container grid-12 why">
+        <figure class="why__media">
+          <div class="frame" data-mask data-parallax>
+            <img data-img="assets/images/products/aq-abissal-02.jpg" data-kind="editorial" data-tint="#1a4650,#0b1a3a" alt="Detalhe macro das escamas azuis e da cauda de um Betta Halfmoon" width="1120" height="1400" loading="lazy">
+          </div>
+          <figcaption class="why__tag">Abissal · detalhe da cauda</figcaption>
+        </figure>
+        <div class="why__text">
+          <p class="eyebrow" data-reveal>A nossa abordagem</p>
+          <h2 id="why-title" data-split>Cada Betta tem <em>carácter próprio.</em></h2>
+          <p class="lead" data-reveal>A AQUORA nasce da admiração por um peixe pequeno de presença enorme, que muda de cor com a luz e de postura com o ambiente.</p>
+          <div class="principles" data-stagger>
+            <div class="principle"><span class="principle__n">1</span><div><h3>Seleção</h3><p>Uma coleção curta, escolhida pela cor e pelo equilíbrio do conjunto.</p></div></div>
+            <div class="principle"><span class="principle__n">2</span><div><h3>Individualidade</h3><p>Cada exemplar tem a sua página, fotografias e descrição.</p></div></div>
+            <div class="principle"><span class="principle__n">3</span><div><h3>Clareza</h3><p>Preço e disponibilidade à vista. O que não está confirmado é assinalado.</p></div></div>
+            <div class="principle"><span class="principle__n">4</span><div><h3>Cuidado</h3><p>Informação para preparar o aquário e receber o peixe com segurança.</p></div></div>
+          </div>
+          <a class="link-arrow" href="pages/about.html" data-reveal><span>Conhecer a AQUORA</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></a>
+        </div>
       </div>
     </section>
 
@@ -171,48 +170,50 @@
           <h2 id="gallery-title" data-split>Escamas, raios <em>e luz</em></h2>
         </div>
         <div class="gallery-nav" data-reveal>
-          <button type="button" class="btn-icon" data-gallery-step="-1" aria-label="Detalhes anteriores"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1" style="transform:scaleX(-1)" aria-hidden="true"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></button>
-          <button type="button" class="btn-icon" data-gallery-step="1" aria-label="Detalhes seguintes"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></button>
+          <button type="button" class="btn-icon" data-gallery-step="-1" aria-label="Detalhes anteriores"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4" style="transform:scaleX(-1)" aria-hidden="true"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></button>
+          <button type="button" class="btn-icon" data-gallery-step="1" aria-label="Detalhes seguintes"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></button>
         </div>
       </div>
       <ul class="gallery list-reset" data-gallery data-lenis-prevent aria-busy="true" aria-label="Detalhes macro dos exemplares"><li class="loading-state">A carregar…</li></ul>
     </section>
 
-    <!-- CUIDADOS -->
-    <section class="section section--abyss" id="cuidados" aria-labelledby="care-title">
+    <!-- 7 · GUIA DE CUIDADOS -->
+    <section class="section section--alt" id="cuidados" aria-labelledby="care-title">
       <div class="container grid-12 care">
         <div class="care__intro">
-          <p class="eyebrow" data-reveal>Cuidados</p>
+          <p class="eyebrow" data-reveal>Guia de cuidados</p>
           <h2 id="care-title" data-split>Preparar a casa <em>antes do peixe</em></h2>
           <p class="lead" data-reveal>Informação geral e prática para começar bem. Para qualquer problema de saúde, procure aconselhamento especializado.</p>
-          <a class="btn" href="pages/care-guide.html" data-reveal><span>Ler o guia completo</span></a>
+          <a class="btn btn--primary" href="pages/care-guide.html" data-reveal><span>Ler o guia completo</span></a>
         </div>
         <ol class="guides list-reset" data-stagger>
-          <li class="guide-row"><span class="guide-row__n">01</span><h3 class="guide-row__title"><a href="pages/care-guide.html#aquario">Preparar o aquário</a></h3><p class="guide-row__text">Volume, tampa, aquecimento e o tempo de estabilização antes da chegada.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
-          <li class="guide-row"><span class="guide-row__n">02</span><h3 class="guide-row__title"><a href="pages/care-guide.html#agua">Qualidade da água</a></h3><p class="guide-row__text">Condicionador, amónia, nitritos, nitratos e mudanças parciais de água.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
-          <li class="guide-row"><span class="guide-row__n">03</span><h3 class="guide-row__title"><a href="pages/care-guide.html#alimentacao">Alimentação</a></h3><p class="guide-row__text">Porções pequenas, alimento adequado e como evitar o excesso.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
-          <li class="guide-row"><span class="guide-row__n">04</span><h3 class="guide-row__title"><a href="pages/care-guide.html#filtracao">Filtração</a></h3><p class="guide-row__text">Porque é que o fluxo deve ser suave para barbatanas longas.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
-          <li class="guide-row"><span class="guide-row__n">05</span><h3 class="guide-row__title"><a href="pages/care-guide.html#temperatura">Temperatura</a></h3><p class="guide-row__text">Estabilidade acima de tudo: aquecedor, termómetro e variações bruscas.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
-          <li class="guide-row"><span class="guide-row__n">06</span><h3 class="guide-row__title"><a href="pages/care-guide.html#aclimatacao">Aclimatação</a></h3><p class="guide-row__text">Como receber o peixe: temperatura, água e luz, passo a passo.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
+          <li class="guide-row"><span class="guide-row__n">1</span><h3 class="guide-row__title"><a href="pages/care-guide.html#aquario">Preparar o aquário</a></h3><p class="guide-row__text">Volume, tampa, aquecimento e estabilização.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
+          <li class="guide-row"><span class="guide-row__n">2</span><h3 class="guide-row__title"><a href="pages/care-guide.html#agua">Qualidade da água</a></h3><p class="guide-row__text">Condicionador, amónia, nitritos e mudanças parciais.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
+          <li class="guide-row"><span class="guide-row__n">3</span><h3 class="guide-row__title"><a href="pages/care-guide.html#alimentacao">Alimentação</a></h3><p class="guide-row__text">Porções pequenas e alimento adequado.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
+          <li class="guide-row"><span class="guide-row__n">4</span><h3 class="guide-row__title"><a href="pages/care-guide.html#filtracao">Filtração</a></h3><p class="guide-row__text">Fluxo suave para barbatanas longas.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
+          <li class="guide-row"><span class="guide-row__n">5</span><h3 class="guide-row__title"><a href="pages/care-guide.html#temperatura">Temperatura</a></h3><p class="guide-row__text">Estabilidade acima de tudo.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
+          <li class="guide-row"><span class="guide-row__n">6</span><h3 class="guide-row__title"><a href="pages/care-guide.html#aclimatacao">Aclimatação</a></h3><p class="guide-row__text">Como receber o peixe, passo a passo.</p><span class="guide-row__arrow" aria-hidden="true"><svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h23M19.5 .5 23 4l-3.5 3.5"/></svg></span></li>
         </ol>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- 8 · CTA FINAL -->
     <section class="section closing" aria-labelledby="cta-title">
       <div class="container">
-        <p class="eyebrow" data-reveal>O próximo passo</p>
-        <h2 id="cta-title" data-split>Encontre o seu <em>Betta.</em></h2>
-        <p class="lead" data-reveal>Explore a coleção com calma. Cada peixe tem uma página própria, com tudo o que precisa de saber antes de decidir.</p>
-        <div class="closing__actions" data-reveal>
-          <a class="btn btn--primary" href="pages/shop.html"><span>Ver a coleção</span></a>
-          <a class="link-arrow" href="pages/care-guide.html"><span>Guia de cuidados</span></a>
+        <div class="closing__panel on-light">
+          <p class="eyebrow" data-reveal>O próximo passo</p>
+          <h2 id="cta-title" data-split>Encontre o seu <em>Betta.</em></h2>
+          <p class="lead" data-reveal>Explore a coleção com calma. Cada peixe tem uma página própria, com tudo o que precisa de saber antes de decidir.</p>
+          <div class="closing__actions" data-reveal>
+            <a class="btn btn--pink" href="pages/shop.html"><span>Ver a coleção</span></a>
+            <a class="btn" href="#contacto"><span>Falar connosco</span></a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="section section--abyss" id="contacto" aria-labelledby="contact-title">
+    <section class="section section--alt" id="contacto" aria-labelledby="contact-title">
       <div class="container grid-12 contact">
         <div class="contact__intro">
           <p class="eyebrow" data-reveal>Contacto</p>
@@ -220,7 +221,7 @@
           <p class="lead" data-reveal>Dúvidas sobre um peixe, o aquário ou a chegada? Escreva-nos antes de decidir.</p>
           <div data-contact-methods data-reveal></div>
         </div>
-        <form class="contact__form" data-contact-form novalidate data-reveal>
+        <form class="contact__form on-light" data-contact-form novalidate data-reveal>
           <div class="contact__row">
             <div class="field">
               <label for="ct-name">Nome</label>
